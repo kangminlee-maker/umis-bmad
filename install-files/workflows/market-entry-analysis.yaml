@@ -1,0 +1,93 @@
+# <!-- Powered by BMAD™ Core -->
+workflow:
+  id: market-entry-analysis
+  name: Comprehensive Market Entry Analysis
+  description: >-
+    Full market analysis workflow for evaluating new market entry opportunities.
+    Uses all 6 UMIS agents in coordinated phases to deliver data-driven recommendations.
+  type: market-intelligence
+  duration: 7-10 days
+  
+  sequence:
+    - phase: "Project Initiation"
+      agent: MOwner
+      duration: "0.5 days"
+      tasks:
+        - command: "*kickoff"
+          output: project-charter.md
+      quality_gate: project-readiness
+      parallel: false
+      
+    - phase: "Market Structure Analysis" 
+      agents: [MAnalyst, MValidator]
+      duration: "2-3 days"
+      tasks:
+        - agent: MAnalyst
+          commands: ["*structure", "*transactions", "*players"]
+          outputs: [market-structure.md, transaction-analysis.md, participant-map.md]
+        - agent: MValidator
+          commands: ["*validate", "*expand"]
+          outputs: [validation-report.md, keyword-matrix.md]
+      quality_gate: quality-gate-1-structure
+      parallel: true
+      
+    - phase: "Opportunity Exploration"
+      agents: [MExplorer, MValidator]
+      duration: "2 days"
+      tasks:
+        - agent: MExplorer
+          commands: ["*interpret", "*opportunities", "*validate"]
+          outputs: [pattern-insights.md, opportunity-portfolio.md]
+        - agent: MValidator
+          commands: ["*validate", "*source"]
+          outputs: [opportunity-validation.md]
+      quality_gate: quality-gate-2-opportunity
+      parallel: false
+      
+    - phase: "Market Quantification"
+      agents: [MQuant, MValidator]
+      duration: "2-3 days"
+      tasks:
+        - agent: MQuant
+          commands: ["*sam", "*growth", "*converge"]
+          outputs: [sam-calculation.xlsx, growth-projection.md, convergence-analysis.md]
+        - agent: MValidator
+          commands: ["*validate", "*reliability"]
+          outputs: [data-validation.md]
+      quality_gate: quality-gate-3-quantification
+      parallel: true
+      
+    - phase: "Synthesis & Decision"
+      agents: [MOwner, MCurator]
+      duration: "1 day"
+      tasks:
+        - agent: MOwner
+          commands: ["*review", "*risk", "*decide"]
+          outputs: [progress-review.md, risk-assessment.md, decision-document.md]
+        - agent: MCurator
+          commands: ["*quality", "*lessons"]
+          outputs: [quality-report.md, lessons-learned.md]
+      quality_gate: quality-gate-4-decision
+      parallel: true
+      
+    - phase: "Knowledge Preservation"
+      agent: MCurator
+      duration: "0.5 days"
+      tasks:
+        - commands: ["*archive", "*lessons"]
+          outputs: [project-archive.zip, knowledge-base-update.md]
+      quality_gate: none
+      parallel: false
+
+  outputs:
+    primary:
+      - project-charter.md
+      - market-structure.md
+      - opportunity-portfolio.md
+      - sam-calculation.xlsx
+      - decision-document.md
+    supporting:
+      - validation-reports/
+      - quality-assessments/
+      - risk-analysis/
+      - lessons-learned.md

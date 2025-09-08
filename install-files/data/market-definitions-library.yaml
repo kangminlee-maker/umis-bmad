@@ -1,0 +1,40 @@
+# Market Definitions Library
+# Standard definitions to ensure consistency across analyses
+
+definitions:
+  TAM:
+    name: Total Addressable Market
+    description: Total revenue opportunity available if 100% market share achieved
+    
+  SAM:
+    name: Serviceable Addressable Market  
+    description: Portion of TAM targeted and reachable by our products/services
+    
+  SOM:
+    name: Serviceable Obtainable Market
+    description: Portion of SAM that can realistically be captured
+    
+  market_participant:
+    name: Market Participant
+    description: Any entity that engages in transactions within the market
+    types:
+      - buyers
+      - sellers
+      - intermediaries
+      - enablers
+      - regulators
+      
+  transaction:
+    name: Market Transaction
+    description: Exchange of value between participants
+    attributes:
+      - volume
+      - frequency
+      - average_value
+      - payment_method
+      
+validation_rules:
+  - SAM must be subset of TAM
+  - SOM must be subset of SAM
+  - All participants must have defined roles
+  - Transactions must have measurable value

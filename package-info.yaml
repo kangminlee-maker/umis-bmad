@@ -1,0 +1,28 @@
+# UMIS Package Information
+package:
+  name: umis-bmad
+  version: 4.0.0
+  build_date: 2025-09-08T09:27:47.000Z
+  
+contents:
+  agents: 6
+  workflows: 4
+  tasks: 15
+  templates: 10
+  checklists: 5
+  data_files: 4
+  utilities: 3
+  teams: 2
+  
+requirements:
+  bmad_version: ">=4.0"
+  shell: bash
+  
+files_manifest:
+  - install-umis.sh
+  - README.md
+  - package-info.yaml
+  - install-files/
+  - docs/
+  - bin/
+  - lib/
