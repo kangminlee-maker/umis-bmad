@@ -36,3 +36,8 @@ env/
 *.backup
 *.bak
 *.orig
+
+# Archive files (배포용은 Releases에서 관리)
+*.tar.gz
+*.zip
+*.tgz
