@@ -1,24 +1,25 @@
 # UMIS v4.0 설치 가이드
 
-## 🚀 빠른 설치 (Quick Install)
+## 🚀 설치 방법
 
-### 1단계: 패키지 다운로드 및 압축 해제
+### 방법 1: 독립 프로젝트로 사용 (권장)
 ```bash
-# 패키지 다운로드 (또는 파일 복사)
-tar -xzf umis-bmad-v4.0.tar.gz
-cd umis-bmad-package
+# GitHub에서 클론
+git clone https://github.com/kangminlee-maker/umis-bmad.git
+cd umis-bmad
+
+# 바로 사용 가능!
 ```
 
-### 2단계: BMAD 프로젝트로 이동
+### 방법 2: 기존 BMAD 프로젝트에 통합
 ```bash
-# 기존 BMAD 프로젝트 디렉토리로 이동
-cd /path/to/your/bmad-project
-```
+# 기존 BMAD 프로젝트 디렉토리에서
+cd your-bmad-project
 
-### 3단계: UMIS 설치 실행
-```bash
-# 설치 스크립트 실행
-/path/to/umis-bmad-package/install-umis.sh
+# UMIS 컴포넌트 복사
+git clone https://github.com/kangminlee-maker/umis-bmad.git temp
+cp -r temp/.bmad-core/* .bmad-core/
+rm -rf temp
 ```
 
 ## 📋 설치 전 확인사항

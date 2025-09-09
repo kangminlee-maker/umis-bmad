@@ -24,24 +24,30 @@ UMIS는 BMAD (Business Method Agent Development) 프레임워크 위에서 작�
 - macOS, Linux 또는 WSL 환경
 - Bash shell
 
-## 🚀 빠른 설치
+## 🚀 빠른 시작
 
-### 1. 설치 패키지 다운로드
+### 방법 1: 새 프로젝트로 시작
 ```bash
-# 패키지를 다운로드하거나 복사합니다
-cd your-bmad-project
+# 레포지토리 클론
+git clone https://github.com/kangminlee-maker/umis-bmad.git
+cd umis-bmad
+
+# 바로 사용 가능!
+# IDE(Cursor 등)에서 에이전트 활성화
+/UMIS *activate MOwner
 ```
 
-### 2. 설치 실행
+### 방법 2: 기존 BMAD 프로젝트에 추가
 ```bash
-# BMAD 프로젝트 루트에서 실행
-chmod +x install-umis.sh
-./install-umis.sh
-```
+# 기존 프로젝트에서
+cd your-existing-bmad-project
 
-### 3. 설치 확인
-```bash
-# UMIS 에이전트 활성화 테스트
+# UMIS 파일 복사
+git clone https://github.com/kangminlee-maker/umis-bmad.git temp-umis
+cp -r temp-umis/.bmad-core/* .bmad-core/
+rm -rf temp-umis
+
+# 사용 시작
 /UMIS *activate MOwner
 ```
 
