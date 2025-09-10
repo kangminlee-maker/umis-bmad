@@ -1,190 +1,247 @@
-# Universal Market Intelligence System (UMIS) v4.0 for BMAD
+# UMIS-BMAD v5.0
 
-<p align="center">
-  <img src="https://img.shields.io/badge/version-4.0-blue.svg" alt="Version">
-  <img src="https://img.shields.io/badge/BMAD-Extension-green.svg" alt="BMAD Extension">
-  <img src="https://img.shields.io/badge/agents-6-orange.svg" alt="6 Agents">
-  <img src="https://img.shields.io/badge/license-MIT-lightgrey.svg" alt="License">
-</p>
+<div align="center">
 
-## 🎯 개요
+[![Version](https://img.shields.io/badge/version-5.0-blue.svg)](https://github.com/your-org/umis-bmad)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Framework](https://img.shields.io/badge/framework-UMIS-orange.svg)](https://github.com/your-org/UMIS-framework)
 
-UMIS는 BMAD (Business Method Agent Development) 프레임워크 위에서 작동하는 시장 분석 전문 에이전트 시스템입니다. 체계적인 시장 조사와 분석을 위한 6명의 전문 에이전트가 협업하여 데이터 기반 의사결정을 지원합니다.
+**Universal Market Intelligence System - BMAD Integration**
 
-### 주요 특징
-- 🤖 **6개의 전문 에이전트**: 각자의 전문 영역을 가진 AI 에이전트들의 협업
-- 📊 **체계적인 5단계 프로세스**: 프로젝트 착수부터 지식 보존까지
-- ✅ **품질 보증 시스템**: 각 단계별 Quality Gate로 데이터 신뢰성 확보
-- 🚀 **자동화된 워크플로우**: 시장 진입, 투자 결정 등 목적별 워크플로우
-- 📚 **지식 관리**: 프로젝트 경험을 축적하여 지속적 개선
+[한국어](#한국어) | [English](#english)
 
-## 📋 사전 요구사항
-
-- **BMAD Core** v4.0 이상이 설치되어 있어야 합니다
-- macOS, Linux 또는 WSL 환경
-- Bash shell
-
-## 🚀 빠른 시작
-
-### 방법 1: 새 프로젝트로 시작
-```bash
-# 레포지토리 클론
-git clone https://github.com/kangminlee-maker/umis-bmad.git
-cd umis-bmad
-
-# 바로 사용 가능!
-# IDE(Cursor 등)에서 에이전트 활성화
-/UMIS *activate MOwner
-```
-
-### 방법 2: 기존 BMAD 프로젝트에 추가
-```bash
-# 기존 프로젝트에서
-cd your-existing-bmad-project
-
-# UMIS 파일 복사
-git clone https://github.com/kangminlee-maker/umis-bmad.git temp-umis
-cp -r temp-umis/.bmad-core/* .bmad-core/
-rm -rf temp-umis
-
-# 사용 시작
-/UMIS *activate MOwner
-```
-
-## 🤖 UMIS 에이전트 소개
-
-### 1. **MOwner** (Strategic Decision Maker) 🎯
-- **역할**: 전략적 의사결정자
-- **주요 기능**: 프로젝트 착수, 진행 검토, 최종 의사결정
-- **활성화**: `/UMIS *activate MOwner`
-
-### 2. **MAnalyst** (Market Structure Analyst) 🔍
-- **역할**: 시장 구조 분석가
-- **주요 기능**: 시장 구조 파악, 거래 패턴 분석, 참여자 매핑
-- **활성화**: `/UMIS *activate MAnalyst`
-
-### 3. **MExplorer** (Opportunity Explorer) 💡
-- **역할**: 기회 탐색가
-- **주요 기능**: 패턴 해석, 기회 발굴, 시장 재정의
-- **활성화**: `/UMIS *activate MExplorer`
-
-### 4. **MQuant** (Market Quantifier) 💰
-- **역할**: 시장 정량화 전문가
-- **주요 기능**: SAM 계산, 성장률 예측, 단위 경제성 분석
-- **활성화**: `/UMIS *activate MQuant`
-
-### 5. **MValidator** (Data Validator) ✅
-- **역할**: 데이터 검증 전문가
-- **주요 기능**: 데이터 정의 검증, 신뢰성 평가, 검색어 확장
-- **활성화**: `/UMIS *activate MValidator`
-
-### 6. **MCurator** (Knowledge Curator) 📚
-- **역할**: 지식 관리자
-- **주요 기능**: 방법론 선택, 품질 관리, 교훈 추출
-- **활성화**: `/UMIS *activate MCurator`
-
-## 📊 주요 워크플로우
-
-### 1. 시장 진입 분석 (Market Entry Analysis)
-```bash
-/UMIS *activate MOwner
-*kickoff "한국 피아노 시장 진입"
-*workflow market-entry-analysis
-```
-
-### 2. 투자 의사결정 (Investment Decision)
-```bash
-/UMIS *activate MOwner
-*workflow investment-decision
-```
-
-### 3. 경쟁 전략 수립 (Competitive Strategy)
-```bash
-/UMIS *activate MAnalyst
-*workflow competitive-strategy
-```
-
-## 💼 사용 시나리오
-
-### 시나리오 1: 새로운 시장 진입 검토
-1. MOwner로 프로젝트 시작
-2. MAnalyst가 시장 구조 분석
-3. MExplorer가 기회 탐색
-4. MQuant가 시장 규모 계산
-5. MOwner가 최종 결정
-
-### 시나리오 2: 빠른 시장 평가
-1. MQuant 직접 활성화
-2. SAM 계산 수행
-3. MValidator로 데이터 검증
-
-## 📁 디렉토리 구조
-
-설치 후 생성되는 구조:
-```
-your-project/
-├── .bmad-core/
-│   ├── agents/         # UMIS 에이전트 정의
-│   ├── workflows/      # 시장 분석 워크플로우
-│   ├── tasks/          # 세부 작업 정의
-│   ├── templates/      # 문서 템플릿
-│   ├── checklists/     # 품질 체크리스트
-│   ├── data/           # 참조 데이터
-│   └── utils/          # 유틸리티 스크립트
-├── projects/           # 프로젝트별 폴더
-├── docs/               # 문서 및 보고서
-└── .ai/                # AI 작업 로그
-```
-
-## 🔧 고급 기능
-
-### 병렬 작업 최적화
-- Phase 1: MAnalyst + MValidator 동시 작업
-- Phase 3: 4가지 SAM 방법론 병렬 실행
-
-### 자동 문서 생성
-- 프로젝트 차터
-- 시장 분석 보고서
-- SAM 계산서
-- 의사결정 문서
-
-### 지식 관리
-- 프로젝트별 자동 아카이빙
-- 재사용 가능한 인사이트 추출
-- 방법론 지속적 개선
-
-## ❓ 문제 해결
-
-### 에이전트가 활성화되지 않을 때
-```bash
-# 설치 확인
-ls -la .bmad-core/agents/
-cat .bmad-core/install-manifest-umis.yaml
-```
-
-### 워크플로우 오류
-```bash
-# 워크플로우 파일 확인
-cat .bmad-core/workflows/market-entry-analysis.yaml
-```
-
-## 📚 추가 문서
-
-- [UMIS-BMAD Integration Guide](docs/UMIS-Guide.md)
-- [Market Analysis Best Practices](docs/best-practices.md)
-- [API Reference](docs/api-reference.md)
-
-## 🆘 지원
-
-- GitHub Issues: 이슈 트래커를 통해 문제를 보고해주세요
-- Pull Requests: 개선사항은 PR로 기여해주세요
-
-## 📄 라이선스
-
-UMIS는 BMAD 확장 팩으로 제공되며, BMAD 라이선스 조건을 따릅니다.
+</div>
 
 ---
 
-**Version**: 4.0  
-**Last Updated**: 2024-12-26  
-**Powered by BMAD™ Core**
+## English
+
+### 🎯 Overview
+
+UMIS-BMAD v5.0 is an advanced market intelligence system that integrates the Universal Market Intelligence System (UMIS) with the BMAD (Business Market Analysis & Development) methodology. This version introduces groundbreaking Adaptive Intelligence features that revolutionize how market analysis is conducted.
+
+### ✨ What's New in v5.0
+
+#### 🧠 Adaptive Intelligence Edition
+- **Progressive Clarification Model**: Dynamically refines goals based on interim results
+- **Milestone-Based Decision Points**: Smart checkpoints for strategic pivots
+- **Adaptive Workflow Engine**: Self-adjusting processes that learn from data patterns
+
+#### 👁️ Progress Guardian System
+- **Stewart's Proactive Monitoring**: Real-time goal alignment tracking
+- **Intervention Triggers**: Automated alerts for course corrections
+- **Over-focus Prevention**: Warnings against tunnel vision
+
+#### 🛡️ 3-Stage Data Integrity System
+1. **Prevention**: Auto-save checkpoints, duplicate protection
+2. **Detection**: Integrity verification, completeness checks
+3. **Recovery**: Version restoration, data reconstruction
+
+### 🚀 Quick Start
+
+```bash
+# Install UMIS-BMAD
+curl -O https://raw.githubusercontent.com/your-org/umis-bmad/v5.0-adaptive/install-umis.sh
+chmod +x install-umis.sh
+./install-umis.sh
+
+# Verify installation
+umis --version
+# Expected: UMIS-BMAD v5.0.0
+
+# Run your first analysis
+umis analyze --mode adaptive --project "my-market-analysis"
+```
+
+### 📦 Package Structure
+
+```
+UMIS-bmad/
+├── bin/                    # Executable scripts
+├── lib/                    # Core libraries
+│   ├── agents/            # 6 specialized agents
+│   ├── frameworks/        # Analysis frameworks
+│   └── monitoring/        # v5.0 monitoring systems
+├── docs/                  # Documentation
+├── install-files/         # Installation resources
+└── guidelines/            # UMIS Framework guidelines
+```
+
+### 🤖 Six Specialized Agents
+
+1. **MOwner** - Strategic decision maker
+2. **MAnalyst (Albert)** - Market structure analyzer
+3. **MExplorer (Steve)** - Opportunity explorer
+4. **MQuant (Bill)** - Market quantification specialist
+5. **MValidator (Rachel)** - Data validation expert
+6. **MCurator (Stewart)** - Progress Guardian & data curator
+
+### 📊 Adaptive Workflow
+
+```mermaid
+graph TD
+    A[Initial Goal] --> B[Data Collection]
+    B --> C{Milestone Check}
+    C -->|Aligned| D[Continue]
+    C -->|Needs Adjustment| E[Goal Refinement]
+    E --> F[Stewart's Intervention]
+    F --> B
+    D --> G[Final Analysis]
+```
+
+### 🔧 Configuration
+
+Create `umis-config.yaml`:
+
+```yaml
+version: 5.0
+mode: adaptive
+monitoring:
+  stewart_alerts: true
+  checkpoint_interval: 30m
+  integrity_checks: true
+data_protection:
+  auto_save: true
+  versioning: true
+  compression: gzip
+```
+
+### 📖 Documentation
+
+- [Installation Guide](docs/UMIS-BMAD-Integration-Guide.md)
+- [API Reference](docs/api-reference.md)
+- [Agent Guidelines](guidelines/)
+- [Migration from v4.0](docs/migration-v4-to-v5.md)
+
+---
+
+## 한국어
+
+### 🎯 개요
+
+UMIS-BMAD v5.0은 범용 시장 정보 시스템(UMIS)과 BMAD(비즈니스 시장 분석 및 개발) 방법론을 통합한 고급 시장 정보 시스템입니다. 이 버전은 시장 분석 방식을 혁신하는 획기적인 적응형 인텔리전스 기능을 도입했습니다.
+
+### ✨ v5.0의 새로운 기능
+
+#### 🧠 적응형 인텔리전스 에디션
+- **점진적 명확화 모델**: 중간 결과를 기반으로 목표를 동적으로 개선
+- **마일스톤 기반 의사결정 포인트**: 전략적 전환을 위한 스마트 체크포인트
+- **적응형 워크플로우 엔진**: 데이터 패턴에서 학습하는 자체 조정 프로세스
+
+#### 👁️ 진행 상황 보호자 시스템
+- **Stewart의 사전 예방적 모니터링**: 실시간 목표 정렬 추적
+- **개입 트리거**: 경로 수정을 위한 자동 알림
+- **과도한 집중 방지**: 터널 비전에 대한 경고
+
+#### 🛡️ 3단계 데이터 무결성 시스템
+1. **예방**: 자동 저장 체크포인트, 중복 보호
+2. **감지**: 무결성 검증, 완전성 검사
+3. **복구**: 버전 복원, 데이터 재구성
+
+### 🚀 빠른 시작
+
+```bash
+# UMIS-BMAD 설치
+curl -O https://raw.githubusercontent.com/your-org/umis-bmad/v5.0-adaptive/install-umis.sh
+chmod +x install-umis.sh
+./install-umis.sh
+
+# 설치 확인
+umis --version
+# 예상: UMIS-BMAD v5.0.0
+
+# 첫 번째 분석 실행
+umis analyze --mode adaptive --project "내-시장-분석"
+```
+
+### 📦 패키지 구조
+
+```
+UMIS-bmad/
+├── bin/                    # 실행 가능 스크립트
+├── lib/                    # 핵심 라이브러리
+│   ├── agents/            # 6개의 전문 에이전트
+│   ├── frameworks/        # 분석 프레임워크
+│   └── monitoring/        # v5.0 모니터링 시스템
+├── docs/                  # 문서
+├── install-files/         # 설치 리소스
+└── guidelines/            # UMIS 프레임워크 가이드라인
+```
+
+### 🤖 6명의 전문 에이전트
+
+1. **MOwner** - 전략적 의사결정자
+2. **MAnalyst (Albert)** - 시장 구조 분석가
+3. **MExplorer (Steve)** - 기회 탐색가
+4. **MQuant (Bill)** - 시장 정량화 전문가
+5. **MValidator (Rachel)** - 데이터 검증 전문가
+6. **MCurator (Stewart)** - 진행 상황 보호자 및 데이터 큐레이터
+
+### 📊 적응형 워크플로우
+
+```mermaid
+graph TD
+    A[초기 목표] --> B[데이터 수집]
+    B --> C{마일스톤 확인}
+    C -->|정렬됨| D[계속]
+    C -->|조정 필요| E[목표 개선]
+    E --> F[Stewart의 개입]
+    F --> B
+    D --> G[최종 분석]
+```
+
+### 🔧 설정
+
+`umis-config.yaml` 생성:
+
+```yaml
+version: 5.0
+mode: adaptive
+monitoring:
+  stewart_alerts: true
+  checkpoint_interval: 30m
+  integrity_checks: true
+data_protection:
+  auto_save: true
+  versioning: true
+  compression: gzip
+```
+
+### 📖 문서
+
+- [설치 가이드](docs/UMIS-BMAD-Integration-Guide.md)
+- [API 참조](docs/api-reference.md)
+- [에이전트 가이드라인](guidelines/)
+- [v4.0에서 마이그레이션](docs/migration-v4-to-v5.md)
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- BMAD Orchestrator Team
+- UMIS Framework Contributors
+- All beta testers and early adopters
+
+## 📞 Support
+
+- **Issues**: [GitHub Issues](https://github.com/your-org/umis-bmad/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/your-org/umis-bmad/discussions)
+- **Email**: support@umis-bmad.org
+
+---
+
+<div align="center">
+
+**Built with ❤️ by the BMAD Orchestrator Team**
+
+[Website](https://umis-bmad.org) | [Documentation](https://docs.umis-bmad.org) | [Blog](https://blog.umis-bmad.org)
+
+</div>
