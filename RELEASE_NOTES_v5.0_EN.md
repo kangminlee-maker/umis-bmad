@@ -2,7 +2,7 @@
 
 ## 🚀 Adaptive Intelligence Edition
 
-Release Date: September 2024
+Release Date: 10th September 2025
 
 ### Executive Summary
 
