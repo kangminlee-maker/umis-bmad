@@ -1,0 +1,202 @@
+# Adaptive Market Analysis Workflow v5.0
+# Learn → Adjust → Proceed
+
+workflow:
+  name: "Adaptive Market Analysis"
+  version: "5.0"
+  type: "adaptive"
+  description: "Flexible market analysis that evolves with discoveries"
+
+  initialization:
+    goal_clarity_required: "20-30%"  # Much lower than v4.0's 80-90%
+    approach: "exploratory"
+    commitment: "low"
+    
+    stewart_setup:
+      - create_initial_checkpoint
+      - enable_monitoring
+      - set_intervention_thresholds
+
+  stages:
+    stage_1_exploration:
+      name: "Discovery Sprint"
+      duration: "1-2 days"
+      flexibility: "high"
+      
+      parallel_activities:
+        - activity: "Market Structure Scan"
+          agent: "Albert"
+          depth: "surface"
+          
+        - activity: "Data Availability Check"
+          agent: "Rachel"
+          scope: "broad"
+          
+        - activity: "Opportunity Spotting"
+          agent: "Steve"
+          mode: "exploratory"
+      
+      convergence_point:
+        participants: ["Albert", "Steve", "Rachel", "Owner"]
+        decisions:
+          - "Which areas show most promise?"
+          - "What surprised us?"
+          - "Where should we focus?"
+        
+        stewart_checkpoint:
+          type: "automatic"
+          includes: "all_discoveries"
+      
+      exit_criteria:
+        - "3-5 focus areas identified"
+        - "Goal clarity increased to 40-60%"
+        - "Owner alignment confirmed"
+    
+    stage_2_focused_analysis:
+      name: "Targeted Deep Dive"
+      duration: "2-3 days"
+      flexibility: "medium"
+      
+      dynamic_resource_allocation:
+        based_on: "stage_1_findings"
+        
+        scenario_complex_structure:
+          priority_agent: "Albert"
+          support_agents: ["Rachel"]
+          focus: "detailed_mapping"
+        
+        scenario_clear_opportunity:
+          priority_agent: "Steve"
+          support_agents: ["Bill"]
+          focus: "validation_and_sizing"
+        
+        scenario_data_rich:
+          priority_agent: "Bill"
+          support_agents: ["Rachel"]
+          focus: "precise_calculation"
+      
+      stewart_monitoring:
+        deep_dive_prevention:
+          threshold: "30% time on single topic"
+          action: "suggest_rebalancing"
+        
+        goal_alignment_check:
+          frequency: "2x daily"
+          format: "brief_status_update"
+        
+        pivot_detection:
+          signals: ["better_opportunity", "blocking_issue", "assumption_failure"]
+          response: "evaluate_pivot_cost"
+      
+      milestone_review:
+        trigger: "midpoint or major_discovery"
+        participants: ["active_agents", "Stewart", "Owner"]
+        decisions:
+          - "Continue depth vs breadth?"
+          - "Pivot to new direction?"
+          - "Resource reallocation?"
+    
+    stage_3_synthesis:
+      name: "Convergence & Decision"
+      duration: "1-2 days"
+      flexibility: "low"
+      
+      parallel_finalization:
+        - task: "Final SAM Calculation"
+          agent: "Bill"
+          validation: "Rachel"
+          
+        - task: "Opportunity Portfolio"
+          agent: "Steve"
+          structure: "Albert"
+          
+        - task: "Knowledge Extraction"
+          agent: "Stewart"
+          format: "reusable_insights"
+      
+      final_integration:
+        owner_led: true
+        deliverables:
+          - "Market size with confidence intervals"
+          - "Prioritized opportunities"
+          - "Execution roadmap"
+          - "Monitoring metrics"
+        
+        stewart_final_checkpoint:
+          type: "comprehensive"
+          includes: "entire_project"
+          enables: "full_reproducibility"
+
+  continuous_elements:
+    daily_standup:
+      time: "start_of_day"
+      duration: "15-30 min"
+      agenda:
+        - "Yesterday's key findings"
+        - "Today's focus areas"
+        - "Alignment check"
+        - "Resource needs"
+    
+    stewart_oversight:
+      monitoring_dashboard:
+        - goal_clarity_score
+        - time_allocation_chart
+        - discovery_impact_rating
+        - pivot_readiness_indicator
+      
+      intervention_protocol:
+        style: "suggestive"
+        escalation_path:
+          1: "gentle_reminder"
+          2: "structured_suggestion"
+          3: "owner_consultation"
+    
+    checkpoint_strategy:
+      automatic_triggers:
+        - "major_discovery"
+        - "phase_transition"
+        - "2_hour_interval"
+        - "before_risky_operation"
+      
+      manual_option: "always_available"
+
+  pivot_framework:
+    early_stage_pivot:
+      cost: "very_low"
+      decision_time: "< 2 hours"
+      criteria:
+        - "ROI potential"
+        - "Resource availability"
+        - "Strategic fit"
+    
+    mid_stage_pivot:
+      cost: "moderate"
+      decision_time: "< 4 hours"
+      requires: "owner_approval"
+    
+    late_stage_pivot:
+      cost: "high"
+      avoided_if_possible: true
+
+  quality_evolution:
+    early_stage:
+      focus: "breadth_of_exploration"
+      success_metric: "options_generated"
+      
+    mid_stage:
+      focus: "depth_of_analysis"
+      success_metric: "insights_validated"
+      
+    final_stage:
+      focus: "actionability"
+      success_metric: "decision_confidence"
+
+  benefits:
+    - "Start without perfect clarity"
+    - "Adapt based on findings"
+    - "Fail fast, learn faster"
+    - "Data always protected"
+    - "Strategic guidance throughout"
+
+---
+# Activation: Set UMIS_MODE=adaptive
