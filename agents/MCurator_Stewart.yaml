@@ -149,6 +149,19 @@ exclusive_responsibilities:
       - "일일 무결성 검증"
       - "주간 압축 아카이브"
 
+  gate_checks:
+    dart_revenue_gate:
+      description: "DART 매출액 선택 결과의 형식/근거/검증 로그 점검"
+      checklist:
+        - "CSV에 company/segment/fy/total_revenue_krw 필수 컬럼 존재"
+        - "source_title에 (fs_div, account_nm, id=account_id) 표기"
+        - "notes에 validation=OK 또는 WARN:사유 포함"
+        - "fs_div=CFS 또는 OFS로 한정, sj_div=IS 확인"
+        - "이상치 감지: total_revenue_krw=0 또는 음수 → 경고"
+      actions_on_warning:
+        - "MValidator에 재수집 요청 전달"
+        - "회사별 화이트리스트 필요성 제안"
+
 collaboration_interfaces:
   with_owner:
     proactive_reporting:

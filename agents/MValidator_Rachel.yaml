@@ -238,3 +238,28 @@ tools_and_methods:
     - "Statistical Process Control"
     - "Outlier Analysis"
     - "Pattern Recognition"
+
+# Domain-specific validation (공시 데이터: DART)
+dart_revenue_validation:
+  objective: "DART에서 '매출액(Revenue)'을 일관되게 선택하고 오탑(매출채권/매출원가/매출총이익 등)을 배제"
+  required_params:
+    - "fs_div=CFS 우선, 실패 시 OFS 폴백"
+    - "bsns_year=연도 고정"
+    - "reprt_code=11011(사업보고서) 기본"
+  selection_rules:
+    - "sj_div=IS(손익계산서)만 허용"
+    - "account_id에 'revenue' 포함 시 최우선(단, deferred/cost/cogs/profit/gross 포함 시 제외)"
+    - "계정명 우선순위: 매출액/영업수익/매출수익/상품·제품·용역매출/수수료수익"
+  exclusion_rules:
+    - "매출채권/채무/자산/부채/충당/환입/할인/할증"
+    - "원가/COGS/cost"
+    - "이익/Profit/Gross (매출총이익 등)"
+  logging_requirements:
+    - "source_title에 fs_div, account_nm, account_id를 기록(id=...)"
+    - "notes에 선택 검증 결과(OK|WARN:사유)를 기록"
+  failure_protocol:
+    - "WARN 발생 시: 재수집 요청(파라미터 재시도, OFS 폴백 확인)"
+    - "지속 경고 시: 회사별 화이트리스트 계정 고정 제안"
+  collaboration_triggers:
+    - when: "DART 매출 검증 WARN 발생"
+      then: ["MCurator", "MQuant_Bill"]

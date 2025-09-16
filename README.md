@@ -36,3 +36,6 @@ LLM에 입력 시 `ai_bundle.adaptive.json` 또는 `ai_bundle.adaptive.quick_sam
 ## Mode
 - Default: UMIS_MODE=adaptive
 - Classic: UMIS_MODE=classic
+
+## Data Sources & Rules
+- DART Revenue Selection Rules: `docs/DART_REVENUE_RULES.md`
