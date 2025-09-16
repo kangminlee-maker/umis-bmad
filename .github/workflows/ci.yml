@@ -3,6 +3,8 @@ on: [push, pull_request]
 jobs:
   validate:
     runs-on: ubuntu-latest
+    env:
+      UMIS_HOME: ${{ github.workspace }}
     defaults:
       run:
         shell: bash
@@ -17,6 +19,13 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install pyyaml
+      - name: Show context
+        run: |
+          echo "GITHUB_WORKSPACE=$GITHUB_WORKSPACE"
+          echo "UMIS_HOME=$UMIS_HOME"
+          pwd
+          ls -la
+          test -f build/validate.py || (echo "Missing build/validate.py" && exit 1)
       - name: Validate
         run: |
           export UMIS_HOME="$PWD"
