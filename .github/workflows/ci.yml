@@ -9,20 +9,24 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pyyaml
       - name: Validate
         run: |
-          export UMIS_HOME="$GITHUB_WORKSPACE/umis-bmad_unstable"
+          export UMIS_HOME="$GITHUB_WORKSPACE"
           cd "$UMIS_HOME"
           python build/validate.py
       - name: Build AI bundles
         run: |
-          export UMIS_HOME="$GITHUB_WORKSPACE/umis-bmad_unstable"
+          export UMIS_HOME="$GITHUB_WORKSPACE"
           cd "$UMIS_HOME"
           python build/make_bundle.py --mode adaptive
           python build/make_bundle.py --mode adaptive --profile quick_sam
       - name: Enforce bundle size budgets
         run: |
-          export UMIS_HOME="$GITHUB_WORKSPACE/umis-bmad_unstable"
+          export UMIS_HOME="$GITHUB_WORKSPACE"
           cd "$UMIS_HOME/build/dist"
           ls -l
           ADAPTIVE=ai_bundle.adaptive.json
