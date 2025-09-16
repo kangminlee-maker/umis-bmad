@@ -28,6 +28,11 @@ prompts:
       핸드오프 알림 → 송신: {{from_agent}} → 수신: {{to_agent}}
       전달물: {{artifact_summary}}
       검수 기준: {{acceptance_criteria}}
+  - id: "capabilities_overview"
+    text: |
+      사용 가능한 명령어: {{commands}}
+      사용 가능한 프롬프트: {{prompts}}
+      라우팅 키워드: {{routes}}
   - id: "activation"
     text: |
       UMIS를 활성화합니다. 컨텍스트를 확인하고 대화 세션을 준비합니다.

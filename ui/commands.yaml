@@ -92,6 +92,14 @@ commands:
       - coordination_rules      # 중간결과물 포맷, 승인 기준, 실패 대응
     description: "여러 에이전트의 분업/병렬/핸드오프 전략을 설계"
     description: "신뢰도 중심의 근거 소스 탐색과 신뢰성 주석"
+
+  - name: "list_capabilities"
+    inputs: []
+    outputs:
+      - commands
+      - prompts
+      - routes
+    description: "모든 명령어, 프롬프트, 라우팅 키워드를 요약해 보여줍니다"
 collaboration_triggers:
   - when: "데이터 신뢰도 불충분"
     then: ["MValidator_Rachel"]

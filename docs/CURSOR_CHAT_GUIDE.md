@@ -27,6 +27,13 @@ python3 "$UMIS_HOME/build/make_bundle.py" --mode adaptive --profile cursor_chat
 - 첫 문구 예시: "UMIS 활성화" 또는 "activate umis"
 - 시스템 응답: `ui/prompts.yaml`의 `activation_ack`로 준비 완료 배너와 다음 단계 안내
 
+## 전역 도움말(명령/프롬프트/라우팅 목록)
+- Chat: "help" / "도움말" / "capabilities" / "명령어"
+- Terminal:
+```bash
+python3 build/list_capabilities.py
+```
+
 ## 유용한 프롬프트
 - kickoff: 문제를 한 문장으로 정리
 - need_clarification: 부족한 맥락 신속 보완
