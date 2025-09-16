@@ -3,6 +3,10 @@ on: [push, pull_request]
 jobs:
   validate:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ${{ github.workspace }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
@@ -15,19 +19,17 @@ jobs:
           python -m pip install pyyaml
       - name: Validate
         run: |
-          export UMIS_HOME="$GITHUB_WORKSPACE"
-          cd "$UMIS_HOME"
+          export UMIS_HOME="$PWD"
           python build/validate.py
       - name: Build AI bundles
         run: |
-          export UMIS_HOME="$GITHUB_WORKSPACE"
-          cd "$UMIS_HOME"
+          export UMIS_HOME="$PWD"
           python build/make_bundle.py --mode adaptive
           python build/make_bundle.py --mode adaptive --profile quick_sam
       - name: Enforce bundle size budgets
         run: |
-          export UMIS_HOME="$GITHUB_WORKSPACE"
-          cd "$UMIS_HOME/build/dist"
+          export UMIS_HOME="$PWD"
+          cd "build/dist"
           ls -l
           ADAPTIVE=ai_bundle.adaptive.json
           QUICK=ai_bundle.adaptive.quick_sam.json
