@@ -11,7 +11,7 @@ routes:
     to: "MExplorer_Steve"
   - match: "목표|정렬|진행 관리|메타"
     to: "MCurator_Stewart"
-  - match: "activate|활성화|시작 준비|준비 완료"
+  - match: "activate|활성화|시작 준비|준비 완료|activate umis"
     to: "MCurator_Stewart"
 decision_tree:
   - ask: "이 문제가 가장 시급한 결과물은 무엇인가요? (숫자/정의/기회/진행)"
