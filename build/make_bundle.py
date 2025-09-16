@@ -217,7 +217,8 @@ def build_bundle(include_adaptive: bool, include_classic: bool, profile_cfg: Opt
 
 def write_json(path: Path, obj: Dict[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding='utf-8')
+    # Minify JSON to reduce bundle size for CI budgets
+    path.write_text(json.dumps(obj, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
 
 
 def main() -> int:
