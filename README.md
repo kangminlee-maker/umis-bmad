@@ -10,6 +10,9 @@ export UMIS_MODE=adaptive   # 또는 classic
 
 # 예시 실행
 bash "$UMIS_HOME"/build/run_example.sh
+
+# 빠른 활성화(권장)
+bash ./activate.sh
 ```
 
 ## AI bundle (recommended for LLM input)
