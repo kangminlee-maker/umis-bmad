@@ -9,6 +9,14 @@ python3 "$UMIS_HOME/build/make_bundle.py" --mode adaptive --profile cursor_chat
 - 산출물: `$UMIS_HOME/build/dist/ai_bundle.adaptive.cursor_chat.json`
 - 이 JSON을 Cursor Chat에 첨부(또는 복사)해 컨텍스트로 사용하세요.
 
+### 채팅에서 번들 생성 요청하는 방법
+- 지시문 예시: "번들 생성해줘 (모드: adaptive, 프로파일: cursor_chat)"
+- 내부적으로 `ui/commands.yaml`의 `build_bundle` 명령을 호출해 `build/run_bundle.sh`를 실행합니다.
+- 스크립트 직접 실행도 가능:
+```bash
+"$UMIS_HOME/build/run_bundle.sh" adaptive cursor_chat
+```
+
 ## 사용자 흐름
 1) Chat: 문제를 자연어로 설명합니다.
 2) Router: `ui/router.yaml` 규칙이 적합한 에이전트를 선택합니다.

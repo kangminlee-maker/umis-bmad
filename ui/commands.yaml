@@ -31,6 +31,14 @@ commands:
       - assumptions
       - confidence
     description: "Bill 중심의 간이 SAM 스텝 실행"
+  - name: "build_bundle"
+    inputs:
+      - mode    # adaptive|classic|both
+      - profile # 예: cursor_chat, quick_sam
+      - out     # 출력 디렉토리 (옵션)
+    outputs:
+      - bundle_paths
+    description: "번들 생성 작업을 채팅에서 트리거 (make_bundle.py 호출)"
   - name: "expand_keywords"
     inputs:
       - query
