@@ -1,0 +1,23 @@
+# Cursor chat focused profile
+include:
+  - agents
+  - ui
+  - monitoring
+  - output.formats
+  - core
+allowed_keys:
+  - intents
+  - commands
+  - routes
+  - prompts
+  - examples
+  - inputs
+  - outputs
+  - collaboration_triggers
+  - playbooks
+  - decision_tree
+  - steps
+  - methods
+  - metrics
+max_list_len: 8
+

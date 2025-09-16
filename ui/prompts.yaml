@@ -1,0 +1,13 @@
+name: "Cursor Prompt Pack"
+description: "대화 시작과 후속 질문 템플릿"
+prompts:
+  - id: "kickoff"
+    text: |
+      당신의 문제를 한 문장으로 말해주세요. 숫자가 필요한가요, 정의가 필요한가요, 아니면 기회를 찾고 있나요?
+  - id: "need_clarification"
+    text: |
+      다음을 빠르게 알려주세요: (1) 목표, (2) 범위/시기, (3) 제약/가용데이터.
+  - id: "handoff_summary"
+    text: |
+      방금까지의 진행 요약과 다음 액션을 공유합니다.
+

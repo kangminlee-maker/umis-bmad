@@ -1,0 +1,21 @@
+name: "Conversation Router"
+description: "사용자 문제를 적절한 에이전트 군으로 라우팅"
+routes:
+  - match: "SAM|시장 규모|규모 추정"
+    to: "MQuant_Bill"
+  - match: "정의|검증|신뢰도|데이터 오류|탐색|검색|키워드|동의어|관련어|크롤링"
+    to: "MValidator_Rachel"
+  - match: "구조|메커니즘|작동 방식|거래 흐름"
+    to: "MAnalyst_Albert"
+  - match: "기회|신규|아이디어|확장"
+    to: "MExplorer_Steve"
+  - match: "목표|정렬|진행 관리|메타"
+    to: "MCurator_Stewart"
+decision_tree:
+  - ask: "이 문제가 가장 시급한 결과물은 무엇인가요? (숫자/정의/기회/진행)"
+    branch:
+      숫자: "MQuant_Bill"
+      정의: "MValidator_Rachel"
+      기회: "MExplorer_Steve"
+      진행: "MCurator_Stewart"
+

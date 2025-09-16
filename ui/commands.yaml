@@ -1,0 +1,59 @@
+name: "Cursor Chat Commands"
+description: "대화형 명령 레이어: 사용자의 문제 진술을 해결 태스크로 변환"
+intents:
+  - name: "problem_to_plan"
+    description: "사용자 문제를 구조화하여 실행계획과 담당 에이전트를 매칭"
+    examples:
+      - "헬스장 입지별 회원 확장 전략을 세워줘"
+      - "중고 악기 시장의 가격 변동 원인을 찾아줘"
+  - name: "quick_sam"
+    description: "빠른 SAM 추정 수행"
+    examples:
+      - "빠르게 SAM 계산해줘"
+  - name: "search_and_expand"
+    description: "사용자 관점 검색어 확장, 동의어/관련어 제안, 실패 시 우회 경로"
+    examples:
+      - "재봉 관련 키워드 확장해줘"
+      - "중고 기타 가격 조사 키워드와 동의어 알려줘"
+commands:
+  - name: "route_problem"
+    inputs:
+      - problem_statement
+    outputs:
+      - plan
+      - suggested_agents
+    description: "문제 진술을 분석하고 적합한 에이전트/워크플로로 라우팅"
+  - name: "run_quick_sam"
+    inputs:
+      - market_definition
+    outputs:
+      - sam_estimate
+      - assumptions
+      - confidence
+    description: "Bill 중심의 간이 SAM 스텝 실행"
+  - name: "expand_keywords"
+    inputs:
+      - query
+      - user_level
+    outputs:
+      - expanded_keywords
+      - synonyms
+      - related_terms
+      - fallback_queries
+    description: "Rachel이 초보자/사용자 용어로 키워드 확장 및 실패 대비 우회경로 제시"
+  - name: "evidence_search"
+    inputs:
+      - hypothesis
+      - constraints
+    outputs:
+      - sources
+      - credibility_notes
+    description: "신뢰도 중심의 근거 소스 탐색과 신뢰성 주석"
+collaboration_triggers:
+  - when: "데이터 신뢰도 불충분"
+    then: ["MValidator_Rachel"]
+  - when: "정량 근거 필요"
+    then: ["MQuant_Bill"]
+  - when: "시장 구조 맥락 필요"
+    then: ["MAnalyst_Albert"]
+

@@ -19,6 +19,9 @@ OUT_DIR = BASE / 'build' / 'dist'
 DEFAULT_ALLOWED_KEYS = {
     'name', 'anchor', 'description', 'owner', 'role', 'outputs',
     'core_competencies', 'summary', 'stages', 'gates', 'format', 'overview',
+    # UI-oriented keys
+    'intents', 'commands', 'routes', 'prompts', 'examples', 'inputs', 'outputs',
+    'collaboration_triggers', 'playbooks', 'decision_tree',
 }
 
 DEFAULT_MAX_LIST_LEN = 10
@@ -157,6 +160,7 @@ def build_bundle(include_adaptive: bool, include_classic: bool, profile_cfg: Opt
         'quality': {},
         'output': {},
         'core': {},
+        'ui': {},
     }
 
     def want(section: str) -> bool:
@@ -202,6 +206,11 @@ def build_bundle(include_adaptive: bool, include_classic: bool, profile_cfg: Opt
     if want('core'):
         for p in collect_files(['core/*.yaml']):
             bundle['core'][p.name] = extract_min_yaml(p, allowed_keys, max_list_len)
+
+    # UI (Cursor chat oriented)
+    if want('ui'):
+        for p in collect_files(['ui/*.yaml']):
+            bundle['ui'][p.name] = extract_min_yaml(p, allowed_keys, max_list_len)
 
     return bundle
 
