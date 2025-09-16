@@ -10,4 +10,12 @@ prompts:
   - id: "handoff_summary"
     text: |
       방금까지의 진행 요약과 다음 액션을 공유합니다.
+  - id: "activation"
+    text: |
+      UMIS를 활성화합니다. 컨텍스트를 확인하고 대화 세션을 준비합니다.
+  - id: "activation_ack"
+    text: |
+      UMIS v5.0 (Adaptive) 활성화 완료.
+      - 사용 가능: 문제→계획 라우팅, 탐색/검색(키워드 확장·근거탐색), 빠른 SAM, 진행 모니터링
+      - 다음 단계: 당신의 문제를 한 문장으로 말해주세요. 필요하면 "탐색/검색"부터 시작하겠습니다.
 

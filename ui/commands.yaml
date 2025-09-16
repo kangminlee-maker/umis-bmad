@@ -39,6 +39,14 @@ commands:
     outputs:
       - bundle_paths
     description: "번들 생성 작업을 채팅에서 트리거 (make_bundle.py 호출)"
+  - name: "activate_session"
+    inputs:
+      - user
+    outputs:
+      - banner
+      - capabilities
+      - next_steps
+    description: "UMIS 세션 활성화 루틴: 배너/가능 작업/다음 단계 안내"
   - name: "expand_keywords"
     inputs:
       - query
