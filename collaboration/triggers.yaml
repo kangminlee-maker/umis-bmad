@@ -1,0 +1,158 @@
+# Collaboration Triggers
+# 에이전트 간 협업이 자동으로 시작되는 트리거 정의
+
+metadata:
+  version_introduced: "4.0"
+  version_modified: "5.0"
+  dependencies: ["agents/*.yaml"]
+  tags: ["collaboration", "triggers", "automation"]
+  description: "에이전트 간 자동 협업 트리거 규칙"
+
+collaboration_triggers:
+  mandatory_handoffs:
+    description: "반드시 발생해야 하는 순차적 협업"
+    
+    structure_to_opportunity:
+      from: "MAnalyst (Albert)"
+      to: "MExplorer (Steve)"
+      trigger: "시장 구조 분석 완료"
+      handoff_data:
+        - "식별된 비효율성"
+        - "구조적 갭"
+        - "변화 신호"
+        - "미충족 니즈"
+      mandatory: true
+    
+    definition_to_calculation:
+      from: ["MAnalyst (Albert)", "MExplorer (Steve)"]
+      to: "MQuant (Bill)"
+      trigger: "시장 정의 및 범위 확정"
+      handoff_data:
+        - "시장 경계 정의"
+        - "타겟 세그먼트"
+        - "기회별 시장 범위"
+      mandatory: true
+    
+    data_validation_checkpoint:
+      from: "All Agents"
+      to: "MValidator (Rachel)"
+      trigger: "핵심 데이터 사용 전"
+      validation_needs:
+        - "시장 규모 데이터"
+        - "성장률 추정치"
+        - "경쟁사 정보"
+        - "고객 데이터"
+      mandatory: true
+  
+  conditional_collaborations:
+    description: "특정 조건 하에서 발생하는 협업"
+    
+    insufficient_data:
+      condition: "데이터 신뢰도 < 70%"
+      trigger_action:
+        from: "MValidator (Rachel)"
+        to: ["MExplorer (Steve)", "MAnalyst (Albert)"]
+        request: "대안 데이터 소스 또는 프록시 지표 탐색"
+    
+    opportunity_validation:
+      condition: "새로운 기회 발견"
+      trigger_action:
+        from: "MExplorer (Steve)"
+        to: ["MQuant (Bill)", "MValidator (Rachel)"]
+        request: "기회 규모 추정 및 데이터 검증"
+    
+    calculation_divergence:
+      condition: "SAM 계산 방법 간 차이 > 30%"
+      trigger_action:
+        from: "MQuant (Bill)"
+        to: ["MAnalyst (Albert)", "MValidator (Rachel)"]
+        request: "시장 정의 재검토 및 데이터 재검증"
+  
+  discovery_sprint_triggers:
+    description: "Discovery Sprint 중 병렬 협업 (v5.0)"
+    
+    initial_exploration:
+      phase: "Sprint Day 1"
+      parallel_actions:
+        - agent: "MAnalyst (Albert)"
+          action: "시장 구조 빠른 스캔"
+        - agent: "MExplorer (Steve)"
+          action: "기회 신호 포착"
+        - agent: "MValidator (Rachel)"
+          action: "데이터 가용성 평가"
+        - agent: "MQuant (Bill)"
+          action: "대략적 규모 파악"
+    
+    convergence_session:
+      phase: "Sprint Day 2"
+      coordinator: "MCurator (Stewart)"
+      actions:
+        - "모든 에이전트 발견사항 종합"
+        - "상위 3-5개 방향 도출"
+        - "다음 단계 우선순위 결정"
+
+intervention_triggers:
+    description: "Stewart의 자동 개입 트리거 (v5.0)"
+    
+    time_imbalance:
+      condition: "특정 분석에 전체 시간의 30% 이상 소요"
+      stewart_action:
+        - "리소스 재배분 제안"
+        - "병렬 처리 권고"
+        - "우선순위 재조정"
+    
+    goal_misalignment:
+      condition: "현재 작업과 목표 정렬도 < 60%"
+      stewart_action:
+        - "목표 재확인 요청"
+        - "방향 전환 제안"
+        - "Owner 개입 요청"
+    
+    breakthrough_discovery:
+      condition: "예상 규모 2배 이상 또는 새로운 카테고리 발견"
+      stewart_action:
+        - "즉시 전체 에이전트 소집"
+        - "전략 재검토 권고"
+        - "Discovery Sprint 재실행 제안"
+
+escalation_protocol:
+  description: "상위 레벨로 에스컬레이션이 필요한 상황"
+  
+  to_owner:
+    triggers:
+      - "에이전트 간 의견 충돌 미해결"
+      - "중대한 리스크 발견"
+      - "전략적 방향 전환 필요"
+      - "예산/자원 한계 도달"
+    
+    information_package:
+      - "쟁점 사항 요약"
+      - "각 에이전트 입장"
+      - "영향도 분석"
+      - "권장 의사결정 옵션"
+  
+  to_stewart:
+    triggers:
+      - "방법론적 이슈"
+      - "프로세스 개선 필요"
+      - "지식 체계화 요청"
+      - "best practice 문서화"
+
+collaboration_rules:
+  communication:
+    - "모든 협업은 문서화"
+    - "핸드오프 체크리스트 사용"
+    - "불확실성 명시"
+    - "가정사항 공유"
+  
+  timing:
+    - "긴급도 레벨 명시"
+    - "응답 시간 준수"
+    - "병렬 처리 우선"
+    - "블로킹 이슈 즉시 해결"
+  
+  quality:
+    - "완성도 기준 충족"
+    - "검증 가능한 데이터"
+    - "명확한 다음 단계"
+    - "피드백 루프 구축"

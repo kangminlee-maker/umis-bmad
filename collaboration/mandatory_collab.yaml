@@ -1,0 +1,210 @@
+# Mandatory Collaboration Points
+# 프로젝트 진행 중 반드시 거쳐야 하는 협업 포인트
+
+metadata:
+  version_introduced: "4.0"
+  version_modified: "5.0"
+  dependencies: ["collaboration/triggers.yaml"]
+  tags: ["collaboration", "mandatory", "checkpoints"]
+  description: "필수 협업 체크포인트와 품질 기준"
+
+mandatory_collaboration_points:
+  project_initiation:
+    description: "프로젝트 시작 시 필수 협업"
+    participants: ["MOwner", "All Agents"]
+    
+    kickoff_meeting:
+      agenda:
+        - "프로젝트 목적과 배경 공유"
+        - "성공 기준 정의"
+        - "제약 조건 확인"
+        - "초기 명확도 평가"
+        - "Discovery Sprint 필요성 결정"
+      
+      outputs:
+        - "Project Charter"
+        - "Success Metrics"
+        - "Timeline & Milestones"
+        - "Role Assignments"
+      
+      quality_gates:
+        - "모든 에이전트 참석 확인"
+        - "목적 이해도 검증"
+        - "역할 명확성 확인"
+  
+  market_definition:
+    description: "시장 정의 및 범위 확정"
+    participants: ["MAnalyst", "MExplorer", "MOwner"]
+    
+    collaboration_requirements:
+      sequential_flow:
+        1: "Albert: 초기 시장 구조 분석"
+        2: "Steve: 기회 기반 시장 재정의"
+        3: "Owner: 최종 범위 승인"
+      
+      decision_points:
+        - "지리적 범위"
+        - "제품/서비스 범위"
+        - "고객 세그먼트"
+        - "가치사슬 범위"
+      
+      documentation:
+        - "Market Definition Document"
+        - "Inclusion/Exclusion Criteria"
+        - "Segment Taxonomy"
+  
+  data_validation_gates:
+    description: "주요 분석 전 데이터 검증"
+    owner: "MValidator (Rachel)"
+    
+    gate_1_initial_data:
+      timing: "분석 시작 전"
+      validation_scope:
+        - "시장 규모 기초 데이터"
+        - "성장률 데이터"
+        - "경쟁 환경 데이터"
+      minimum_requirements:
+        - "신뢰도 70% 이상"
+        - "3개 이상 소스 확인"
+        - "2년 이내 데이터"
+    
+    gate_2_calculation_inputs:
+      timing: "SAM 계산 전"
+      validation_scope:
+        - "세그먼트별 데이터"
+        - "가격 정보"
+        - "고객 수 추정치"
+      critical_checks:
+        - "내부 일관성"
+        - "외부 벤치마크"
+        - "논리적 타당성"
+    
+    gate_3_final_outputs:
+      timing: "최종 보고 전"
+      validation_scope:
+        - "모든 계산 결과"
+        - "성장 예측"
+        - "시나리오 분석"
+      final_verification:
+        - "Executive Summary 수치"
+        - "주요 가정 검토"
+        - "민감도 분석"
+  
+  sam_calculation_convergence:
+    description: "SAM 계산 4가지 방법 수렴"
+    owner: "MQuant (Bill)"
+    participants: ["MAnalyst", "MValidator"]
+    
+    convergence_process:
+      iteration_1:
+        - "4가지 방법 독립 계산"
+        - "결과 비교 및 차이 분석"
+        - "30% 이상 차이 시 원인 규명"
+      
+      iteration_2:
+        - "가정 및 데이터 재검토"
+        - "시장 정의 조정"
+        - "재계산 수행"
+      
+      final_convergence:
+        criteria: "모든 방법 간 ±30% 이내"
+        actions_if_not_met:
+          - "Owner 에스컬레이션"
+          - "불확실성 범위 확대"
+          - "추가 검증 수행"
+  
+  milestone_reviews:
+    description: "주요 마일스톤별 필수 검토"
+    
+    discovery_sprint_review:
+      timing: "Sprint 종료 시"
+      participants: ["All Agents", "MOwner"]
+      agenda:
+        - "주요 발견사항 공유"
+        - "방향성 우선순위화"
+        - "명확도 점수 업데이트"
+        - "다음 단계 결정"
+    
+    mid_project_review:
+      timing: "프로젝트 50% 진행"
+      participants: ["MCurator", "MOwner", "Lead Agents"]
+      focus_areas:
+        - "진행 상황 vs 계획"
+        - "주요 리스크 및 이슈"
+        - "범위 조정 필요성"
+        - "리소스 재배분"
+    
+    final_synthesis:
+      timing: "분석 완료 후"
+      participants: ["All Agents", "MOwner"]
+      deliverables:
+        - "통합 분석 결과"
+        - "주요 인사이트"
+        - "전략적 권고사항"
+        - "실행 로드맵"
+
+v5_mandatory_collaborations:
+  - name: "프로젝트 착수 회의"
+    trigger: "Owner의 프로젝트 시작 선언"
+    participants: ["owner", "all_agents"]
+    v5_addition: "명확도 평가 및 접근법 결정"
+  - name: "데이터 정의 정렬"
+    trigger: "새로운 데이터 소스 발견 또는 정의 불일치"
+    participants: ["rachel", "requesting_agent"]
+  - name: "SAM 계산 협업"
+    trigger: "Bill의 SAM 계산 시작"
+    participants: ["bill", "rachel", "albert"]
+
+adaptive_checkpoints:
+    description: "v5.0 적응형 워크플로우 체크포인트"
+    
+    clarity_evolution:
+      trigger: "명확도 점수 2점 이상 변화"
+      actions:
+        - "목표 재정의 검토"
+        - "작업 우선순위 조정"
+        - "리소스 재배분"
+    
+    pivot_decision:
+      trigger: "새로운 major 기회 발견"
+      participants: ["MCurator", "MOwner", "발견 Agent"]
+      decision_criteria:
+        - "기회 규모와 매력도"
+        - "기존 목표와의 정합성"
+        - "전환 비용"
+        - "시간 제약"
+    
+    stewart_intervention:
+      trigger: "자동 모니터링 알림"
+      response_protocol:
+        - "24시간 내 대응"
+        - "근본 원인 분석"
+        - "개선 계획 수립"
+        - "실행 및 모니터링"
+
+quality_standards:
+  collaboration_effectiveness:
+    metrics:
+      - "핸드오프 완성도"
+      - "재작업 비율"
+      - "의사결정 속도"
+      - "정보 손실률"
+    
+    improvement_mechanisms:
+      - "정기 회고"
+      - "프로세스 개선"
+      - "도구 최적화"
+      - "교육 훈련"
+  
+  documentation_standards:
+    requirements:
+      - "모든 결정사항 기록"
+      - "가정과 제약 명시"
+      - "버전 관리"
+      - "추적 가능성"
+    
+    formats:
+      - "표준 템플릿 사용"
+      - "시각화 자료 포함"
+      - "Executive Summary"
+      - "Technical Appendix"

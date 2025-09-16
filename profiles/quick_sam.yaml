@@ -1,0 +1,12 @@
+# Minimal profile for quick SAM estimation
+include:
+  - agents
+  - workflows.adaptive
+  - monitoring
+  - output.formats
+  - core
+allowed_keys:
+  - metrics
+  - steps
+  - methods
+max_list_len: 6

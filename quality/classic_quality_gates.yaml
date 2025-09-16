@@ -1,0 +1,39 @@
+# Classic Quality Gates (v4 references)
+
+metadata:
+  version_introduced: "4.0"
+  version_modified: "5.0"
+  tags: ["quality", "classic", "gates"]
+  description: "v4 방식의 단계별 품질 게이트"
+
+quality_gates_classic:
+  anchor: "quality_gates_classic"
+  gate_1_structure_completeness:
+    when: "Phase 1 종료"
+    owner: "Stewart"
+    criteria:
+      - criterion: "가치사슬 완전성"
+      - criterion: "데이터 커버리지"
+      - criterion: "정의 명확성"
+  gate_2_opportunity_validity:
+    when: "Phase 2 종료"
+    owner: "Owner"
+    criteria:
+      - criterion: "현실성"
+      - criterion: "규모"
+      - criterion: "실행 가능성"
+  gate_3_quantification_confidence:
+    when: "Phase 3 종료"
+    owner: "Rachel + Stewart"
+    criteria:
+      - criterion: "수렴도"
+      - criterion: "데이터 품질"
+      - criterion: "논리성"
+  gate_4_decision_readiness:
+    when: "Phase 4 종료"
+    owner: "Owner"
+    criteria:
+      - criterion: "정보 완전성"
+      - criterion: "리스크 파악"
+      - criterion: "실행 계획"
+

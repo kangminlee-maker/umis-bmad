@@ -1,0 +1,60 @@
+# Checkpoint System
+# 자동 및 수동 체크포인트 시스템 정의
+
+metadata:
+  version_introduced: "5.0"
+  version_modified: "5.0"
+  dependencies: 
+    - "data_integrity/protection_strategy.yaml"
+  tags: ["data-integrity", "v5-new", "checkpoint", "backup"]
+  description: "프로젝트 데이터의 자동 및 수동 체크포인트 시스템"
+
+checkpoint_system:
+  automatic_checkpoints:
+    - frequency: "2시간마다"
+      type: "incremental"
+      retention: "24시간"
+    
+    - frequency: "일일 (오후 6시)"
+      type: "full"
+      retention: "7일"
+    
+    - frequency: "주간 (금요일)"
+      type: "full_compressed"
+      retention: "30일"
+  
+  manual_checkpoints:
+    triggers:
+      - "중요 의사결정 전"
+      - "Phase 완료 시"
+      - "대규모 데이터 수정 전"
+      - "위험한 작업 전"
+    
+    naming: "{timestamp}__{tag}__{description}"
+    retention: "프로젝트 종료까지"
+  
+  checkpoint_contents:
+    - "01_raw_data/ (모든 원본 데이터)"
+    - "02_analysis/ (분석 과정)"
+    - "03_outputs/ (결과물)"
+    - "04_knowledge_extracted/ (추출된 지식)"
+    - "05_metadata/ (메타데이터)"
+    - ".project_metadata.yaml"
+    - "decision_log.yaml"
+  
+  automation_scripts:
+    - script: "create_checkpoint.sh"
+      purpose: "체크포인트 생성"
+      location: "data_integrity/scripts/"
+      
+    - script: "verify_integrity.py"
+      purpose: "무결성 검증"
+      location: "data_integrity/scripts/"
+      
+    - script: "restore_checkpoint.sh"
+      purpose: "체크포인트 복원"
+      location: "data_integrity/scripts/"
+      
+    - script: "setup_auto_backup.sh"
+      purpose: "자동 백업 설정"
+      location: "data_integrity/scripts/"

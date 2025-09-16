@@ -1,0 +1,38 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate
+        run: |
+          export UMIS_HOME="$GITHUB_WORKSPACE/umis-bmad_unstable"
+          cd "$UMIS_HOME"
+          python build/validate.py
+      - name: Build AI bundles
+        run: |
+          export UMIS_HOME="$GITHUB_WORKSPACE/umis-bmad_unstable"
+          cd "$UMIS_HOME"
+          python build/make_bundle.py --mode adaptive
+          python build/make_bundle.py --mode adaptive --profile quick_sam
+      - name: Enforce bundle size budgets
+        run: |
+          export UMIS_HOME="$GITHUB_WORKSPACE/umis-bmad_unstable"
+          cd "$UMIS_HOME/build/dist"
+          ls -l
+          ADAPTIVE=ai_bundle.adaptive.json
+          QUICK=ai_bundle.adaptive.quick_sam.json
+          # budgets (bytes)
+          BUDGET_ADAPTIVE=12288
+          BUDGET_QUICK=10240
+          A_SIZE=$(wc -c < "$ADAPTIVE")
+          Q_SIZE=$(wc -c < "$QUICK")
+          echo "Adaptive: $A_SIZE / $BUDGET_ADAPTIVE bytes"
+          echo "Quick SAM: $Q_SIZE / $BUDGET_QUICK bytes"
+          [ "$A_SIZE" -le "$BUDGET_ADAPTIVE" ] || (echo "Adaptive bundle exceeds budget" && exit 1)
+          [ "$Q_SIZE" -le "$BUDGET_QUICK" ] || (echo "Quick SAM bundle exceeds budget" && exit 1)

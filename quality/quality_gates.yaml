@@ -1,0 +1,205 @@
+# Quality Gates
+# 각 단계별 품질 기준과 통과 조건
+
+metadata:
+  version_introduced: "4.0"
+  version_modified: "5.0"
+  dependencies: ["collaboration/mandatory_collab.yaml"]
+  tags: ["quality", "gates", "standards", "criteria"]
+  description: "프로젝트 단계별 품질 게이트 정의"
+
+quality_gates:
+  phase_0_initiation:
+    description: "프로젝트 착수 단계 품질 기준"
+    
+    clarity_assessment:
+      criteria:
+        - metric: "초기 명확도"
+          minimum: 2  # v5.0에서 낮춤 (기존 8)
+          measurement: "1-10 스케일"
+        - metric: "목적 정의"
+          requirement: "최소한의 방향성"
+          verification: "Owner 승인"
+      
+      actions_if_low_clarity:
+        - "Discovery Sprint 계획"
+        - "탐색적 접근 채택"
+        - "적응형 워크플로우 활성화"
+    
+    resource_readiness:
+      checklist:
+        - "프로젝트 팀 구성 완료"
+        - "초기 데이터 소스 식별"
+        - "도구 및 시스템 준비"
+        - "Stewart Guardian Mode 활성화"
+  
+  phase_1_discovery:
+    description: "탐색 및 분석 단계 품질 기준"
+    
+    market_structure_analysis:
+      owner: "MAnalyst (Albert)"
+      quality_criteria:
+        completeness:
+          - "주요 참여자 90% 이상 식별"
+          - "가치사슬 전체 매핑"
+          - "거래 흐름 명확화"
+        accuracy:
+          - "3개 이상 소스 검증"
+          - "전문가 검토 완료"
+          - "논리적 일관성 확보"
+      deliverable_standards:
+        - "시각화 자료 포함"
+        - "데이터 출처 명시"
+        - "한계점 문서화"
+    
+    opportunity_identification:
+      owner: "MExplorer (Steve)"
+      quality_criteria:
+        innovation_potential:
+          - "최소 3개 이상 기회 식별"
+          - "각 기회별 차별성 명확"
+          - "실행 가능성 평가 완료"
+        validation:
+          - "시장 니즈 검증"
+          - "경쟁 상황 분석"
+          - "진입 장벽 평가"
+    
+    data_validation:
+      owner: "MValidator (Rachel)"
+      gate_requirements:
+        reliability:
+          - threshold: "핵심 데이터 신뢰도 70% 이상"
+          - verification: "다중 소스 교차 검증"
+          - documentation: "검증 프로세스 기록"
+        coverage:
+          - "필수 데이터 100% 확보"
+          - "시계열 연속성 확인"
+          - "지역/세그먼트 완전성"
+  
+  phase_2_quantification:
+    description: "정량화 및 계산 단계 품질 기준"
+    
+    sam_calculation:
+      owner: "MQuant (Bill)"
+      convergence_criteria:
+        primary_gate:
+          - metric: "4가지 방법 간 차이"
+            threshold: "±30% 이내"
+            action_if_failed: "재계산 및 가정 검토"
+        secondary_checks:
+          - "외부 벤치마크 대비 합리성"
+          - "성장률 현실성"
+          - "시나리오 간 일관성"
+      
+      documentation_requirements:
+        - "모든 가정 명시"
+        - "계산 과정 재현 가능"
+        - "민감도 분석 포함"
+        - "신뢰 구간 제시"
+    
+    growth_projection:
+      quality_standards:
+        scenario_completeness:
+          - "Base/Bull/Bear 시나리오"
+          - "주요 동인 식별"
+          - "turning point 예측"
+        validation_methods:
+          - "과거 성장 패턴 비교"
+          - "유사 시장 벤치마크"
+          - "전문가 검토"
+  
+  phase_3_synthesis:
+    description: "종합 및 보고 단계 품질 기준"
+    
+    integration_quality:
+      requirements:
+        consistency:
+          - "모든 분석 간 일관성"
+          - "수치 정합성 검증"
+          - "논리적 흐름 확보"
+        completeness:
+          - "모든 목표 질문 답변"
+          - "주요 리스크 식별"
+          - "실행 계획 포함"
+    
+    report_quality:
+      standards:
+        executive_summary:
+          - "2페이지 이내"
+          - "핵심 인사이트 명확"
+          - "의사결정 가능한 권고"
+        main_report:
+          - "논리적 구조"
+          - "시각화 자료 30% 이상"
+          - "기술적 부록 완비"
+        accessibility:
+          - "비전문가도 이해 가능"
+          - "전문용어 설명"
+          - "단계별 요약 제공"
+
+adaptive_quality_gates:
+    description: "v5.0 적응형 품질 기준"
+    
+    discovery_sprint_gates:
+      timing: "Sprint 종료 시"
+      criteria:
+        direction_clarity:
+          - "3-5개 구체적 방향 도출"
+          - "각 방향별 타당성 검증"
+          - "우선순위 명확화"
+        team_alignment:
+          - "모든 에이전트 합의"
+          - "Owner 승인"
+          - "다음 단계 명확"
+    
+    pivot_quality_check:
+      trigger: "방향 전환 결정 시"
+      requirements:
+        justification:
+          - "데이터 기반 근거"
+          - "비용-효익 분석"
+          - "리스크 평가"
+        transition_plan:
+          - "명확한 전환 계획"
+          - "기존 작업 활용 방안"
+          - "새로운 성공 지표"
+    
+    continuous_monitoring:
+      owner: "MCurator (Stewart)"
+      real_time_checks:
+        - metric: "목표 정렬도"
+          threshold: "60% 이상 유지"
+          frequency: "일일"
+        - metric: "데이터 건강도"
+          threshold: "무결성 95% 이상"
+          frequency: "2시간마다"
+
+quality_improvement:
+  feedback_loops:
+    post_project_review:
+      - "전체 프로세스 평가"
+      - "개선 기회 식별"
+      - "Best Practice 문서화"
+      - "도구/방법론 업데이트"
+    
+    continuous_learning:
+      - "오류 패턴 분석"
+      - "성공 요인 추출"
+      - "지식 베이스 업데이트"
+      - "팀 역량 강화"
+  
+  metrics_tracking:
+    efficiency:
+      - "계획 대비 실제 시간"
+      - "재작업 비율"
+      - "첫 번째 통과율"
+    
+    effectiveness:
+      - "인사이트 품질"
+      - "권고사항 채택률"
+      - "비즈니스 영향도"
+    
+    evolution:
+      - "명확도 향상 속도"
+      - "피벗 성공률"
+      - "적응 효율성"

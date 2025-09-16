@@ -1,28 +1,29 @@
-# UMIS Package Information
+# UMIS-BMAD Package Info
+
 package:
-  name: umis-bmad
-  version: 4.0.0
-  build_date: 2025-09-08T09:27:47.000Z
-  
-contents:
-  agents: 6
-  workflows: 4
-  tasks: 15
-  templates: 10
-  checklists: 5
-  data_files: 4
-  utilities: 3
-  teams: 2
-  
-requirements:
-  bmad_version: ">=4.0"
-  shell: bash
-  
-files_manifest:
-  - install-umis.sh
-  - README.md
-  - package-info.yaml
-  - install-files/
-  - docs/
-  - bin/
-  - lib/
+  name: "umis-bmad"
+  channel: "release"
+  version: "5.0.1"
+  description: "UMIS BMAD integration aligned with UMIS v5.0 (standalone)"
+
+compatibility:
+  umis_framework: 
+    version: ">=5.0.0"
+    mode_activation: "UMIS_MODE (adaptive|classic)"
+
+structure:
+  directories:
+    - "bin/"
+    - "build/"
+    - "docs/"
+    - "agents/"
+    - "workflows/"
+    - "monitoring/"
+    - "data_integrity/"
+    - "output/"
+    - "quality/"
+    - "migration/"
+    - "core/"
+
+notes:
+  - "Standalone build (no external framework dependency)."

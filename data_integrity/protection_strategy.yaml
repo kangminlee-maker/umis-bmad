@@ -1,0 +1,87 @@
+# Progressive Data Integrity System
+# 프로젝트 데이터를 자동으로 보호하고 복구하는 3단계 시스템
+
+metadata:
+  version_introduced: "5.0"
+  version_modified: "5.0"
+  dependencies: 
+    - "agents/MCurator_Stewart.yaml"
+  tags: ["data-integrity", "v5-new", "protection", "recovery"]
+  description: "3단계 데이터 보호 전략 (Prevention → Detection → Recovery)"
+
+data_integrity_system:
+  name: "Progressive Data Integrity System"
+  description: "프로젝트 데이터를 자동으로 보호하고 복구하는 3단계 시스템"
+  
+  protection_strategy:
+    three_stage_approach:
+      - stage: "Prevention"
+        description: "사전 예방"
+        mechanisms:
+          - "자동 저장 (모든 중요 작업 후)"
+          - "버전 관리 (Git 통합)"
+          - "중복 저장 (로컬 + 클라우드)"
+      
+      - stage: "Detection"
+        description: "문제 감지"
+        mechanisms:
+          - "체크섬 검증"
+          - "구조 완전성 검사"
+          - "데이터 일관성 확인"
+      
+      - stage: "Recovery"
+        description: "복구"
+        mechanisms:
+          - "체크포인트 복원"
+          - "부분 복구"
+          - "대체 데이터 소싱"
+  
+  integrity_checks:
+    file_existence:
+      description: "핵심 파일 존재 여부"
+      critical_files:
+        - ".project_metadata.yaml"
+        - "README.md"
+        - "*/index.yaml"
+      action: "누락 시 경고 및 복구 제안"
+    
+    data_consistency:
+      description: "데이터 일관성"
+      checks:
+        - "CSV 행 수 일치"
+        - "YAML 스키마 검증"
+        - "참조 무결성"
+      action: "불일치 발견 시 상세 리포트"
+    
+    structural_completeness:
+      description: "디렉토리 구조 완전성"
+      expected_structure:
+        - "5개 주요 폴더 존재"
+        - "에이전트별 하위 폴더"
+        - "표준 파일 구조"
+      action: "구조 복원 스크립트 실행"
+  
+  recovery_protocol:
+    quick_recovery:
+      description: "5분 내 복구"
+      steps:
+        1: "최근 체크포인트 식별"
+        2: "현재 상태 백업"
+        3: "체크포인트 복원"
+        4: "무결성 검증"
+        5: "작업 재개"
+    
+    selective_recovery:
+      description: "특정 부분만 복구"
+      options:
+        - "특정 에이전트 데이터만"
+        - "특정 시점으로"
+        - "특정 파일만"
+    
+    disaster_recovery:
+      description: "완전 복구"
+      sources:
+        - "로컬 체크포인트"
+        - "클라우드 백업"
+        - "팀 멤버 복사본"
+      procedure: "자동화된 복구 스크립트"

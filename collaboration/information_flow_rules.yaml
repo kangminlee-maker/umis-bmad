@@ -1,0 +1,38 @@
+# Information Flow Rules (Classic references + v5 호환)
+
+metadata:
+  version_introduced: "4.0"
+  version_modified: "5.0"
+  tags: ["collaboration", "information-flow", "protocols"]
+  description: "에이전트 간 Push/Pull 정보 흐름 규칙"
+
+information_flow_rules:
+  push_protocols:
+    - agent: "albert"
+      pushes_to: ["steve", "bill"]
+      when: "시장 구조 분석 완료"
+    - agent: "steve"
+      pushes_to: ["bill", "owner"]
+      when: "기회 발굴 및 검증 완료"
+    - agent: "bill"
+      pushes_to: ["owner", "steve"]
+      when: "SAM 계산 완료"
+    - agent: "rachel"
+      pushes_to: ["all_agents"]
+      when: "데이터 검증 완료"
+    - agent: "stewart"
+      pushes_to: ["all_agents"]
+      when: "프로젝트 시작"
+
+  pull_protocols:
+    - agent: "bill"
+      can_pull_from: ["rachel"]
+      what: "데이터 정의 검증"
+    - agent: "steve"
+      can_pull_from: ["albert"]
+      what: "추가 구조 정보"
+    - agent: "owner"
+      can_pull_from: ["all_agents"]
+      what: "진행 상황, 주요 발견사항"
+
+

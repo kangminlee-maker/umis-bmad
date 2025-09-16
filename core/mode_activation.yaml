@@ -1,0 +1,22 @@
+# Mode Activation Rules
+
+metadata:
+  version_introduced: "5.0"
+  version_modified: "5.0"
+  tags: ["core", "mode", "activation"]
+  description: "UMIS 실행 모드(Adaptive/Classic) 활성화 규칙"
+
+mode_activation:
+  env_var: "UMIS_MODE"
+  default: "adaptive"
+  modes:
+    adaptive:
+      entrypoint: "workflows/adaptive/adaptive_workflow.yaml#adaptive_workflow"
+      description: "v5 적응형 워크플로우"
+    classic:
+      entrypoint: "workflows/classic/workflow_classic_v4.yaml#workflow_classic_v4"
+      description: "v4 고정형 워크플로우"
+
+references:
+  - "workflows/workflow_modes.yaml#workflow_modes"
+

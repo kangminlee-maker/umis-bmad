@@ -1,0 +1,198 @@
+# Success Metrics
+# 프로젝트 성공을 측정하는 지표와 평가 기준
+
+metadata:
+  version_introduced: "4.0"
+  version_modified: "5.0"
+  dependencies: ["quality/quality_gates.yaml"]
+  tags: ["quality", "metrics", "success", "KPIs"]
+  description: "프로젝트 성공 측정 지표와 평가 체계"
+
+success_metrics:
+  project_level_metrics:
+    description: "전체 프로젝트 성공 지표"
+    
+    primary_metrics:
+      business_impact:
+        definition: "프로젝트 결과가 비즈니스 의사결정에 미친 영향"
+        measurement:
+          - "의사결정 품질 향상도"
+          - "투자 수익률 (ROI)"
+          - "리스크 감소율"
+        target: "명확한 Go/No-Go 결정 도출"
+      
+      insight_quality:
+        definition: "도출된 인사이트의 깊이와 실용성"
+        indicators:
+          - "Actionable insights 수"
+          - "전략적 권고사항 채택률"
+          - "예측 정확도"
+        target: "최소 5개 이상 핵심 인사이트"
+      
+      time_efficiency:
+        definition: "계획 대비 실제 소요 시간"
+        measurement:
+          - "전체 프로젝트 기간"
+          - "단계별 소요 시간"
+          - "대기/지연 시간"
+        target_v5: "기존 대비 40% 단축"
+    
+    secondary_metrics:
+      data_quality:
+        - "검증된 데이터 비율: 90% 이상"
+        - "데이터 신뢰도: 평균 80% 이상"
+        - "데이터 갭: 10% 이하"
+      
+      collaboration_effectiveness:
+        - "핸드오프 성공률: 95% 이상"
+        - "재작업 요청: 10% 이하"
+        - "평균 응답 시간: 4시간 이내"
+      
+      documentation_completeness:
+        - "필수 문서 완성도: 100%"
+        - "재현 가능성: 90% 이상"
+        - "지식 전수율: 80% 이상"
+  
+  agent_specific_metrics:
+    description: "각 에이전트별 성과 지표"
+    
+    manalyst_albert:
+      kpis:
+        - metric: "시장 구조 완전성"
+          target: "주요 참여자 95% 커버"
+        - metric: "가치사슬 정확도"
+          target: "전문가 검증 90% 일치"
+        - metric: "분석 깊이"
+          target: "3단계 이상 상세 분석"
+    
+    mexplorer_steve:
+      kpis:
+        - metric: "기회 발굴 수"
+          target: "최소 5개 이상"
+        - metric: "혁신성 점수"
+          target: "평균 7/10 이상"
+        - metric: "실행 가능성"
+          target: "3개 이상 즉시 실행 가능"
+    
+    mquant_bill:
+      kpis:
+        - metric: "SAM 계산 정확도"
+          target: "4방법 ±30% 수렴"
+        - metric: "예측 신뢰도"
+          target: "90% 신뢰구간 제시"
+        - metric: "모델 완성도"
+          target: "민감도 분석 100% 포함"
+    
+    mvalidator_rachel:
+      kpis:
+        - metric: "데이터 검증률"
+          target: "핵심 데이터 100%"
+        - metric: "오류 발견율"
+          target: "Critical 오류 0%"
+        - metric: "검증 속도"
+          target: "24시간 내 완료"
+    
+    mcurator_stewart:
+      kpis_v5:
+        - metric: "개입 적시성"
+          target: "필요 시점 ±2시간"
+        - metric: "지식 체계화율"
+          target: "95% 이상 문서화"
+        - metric: "데이터 보호율"
+          target: "100% 무손실"
+  
+  adaptive_success_metrics:
+    description: "v5.0 적응형 워크플로우 성공 지표"
+    
+    clarity_evolution:
+      measurement: "명확도 점수 변화 (1-10)"
+      success_criteria:
+        - "시작: 2-3점 허용"
+        - "종료: 8점 이상"
+        - "일일 향상: 평균 0.5점"
+      tracking:
+        - "일일 명확도 로그"
+        - "주요 전환점 기록"
+        - "최종 달성도"
+    
+    pivot_effectiveness:
+      indicators:
+        - "피벗 결정 시간: 24시간 이내"
+        - "가치 보존율: 70% 이상"
+        - "새 방향 성공률: 80% 이상"
+      evaluation:
+        - "피벗 전후 비교"
+        - "리소스 효율성"
+        - "최종 성과 영향"
+    
+    discovery_sprint_roi:
+      measurement:
+        - "투입 시간: 1-2일"
+        - "방향 명확도 향상: 300% 이상"
+        - "후속 작업 효율: 50% 개선"
+      success_markers:
+        - "구체적 방향 3개 이상"
+        - "팀 정렬도 90% 이상"
+        - "즉시 실행 가능"
+
+measurement_framework:
+  data_collection:
+    methods:
+      - "자동 로깅 시스템"
+      - "일일 체크인"
+      - "마일스톤 리뷰"
+      - "최종 평가"
+    
+    tools:
+      - "프로젝트 대시보드"
+      - "메트릭 트래커"
+      - "품질 체크리스트"
+      - "피드백 시스템"
+  
+  evaluation_process:
+    frequency:
+      - "실시간: 자동 메트릭"
+      - "일일: 진행 상황"
+      - "주간: 종합 리뷰"
+      - "완료 후: 전체 평가"
+    
+    scoring_system:
+      weights:
+        - "Business Impact: 40%"
+        - "Insight Quality: 30%"
+        - "Efficiency: 20%"
+        - "Process Quality: 10%"
+      
+      grades:
+        - "A (90%+): Exceptional"
+        - "B (80-89%): Successful"
+        - "C (70-79%): Acceptable"
+        - "D (<70%): Needs Improvement"
+
+continuous_improvement:
+  success_factors_analysis:
+    high_performing_projects:
+      - "명확한 초기 목표 (또는 낮은 명확도 수용)"
+      - "적극적인 협업"
+      - "신속한 피벗"
+      - "데이터 품질 관리"
+    
+    common_pitfalls:
+      - "과도한 완벽주의"
+      - "늦은 방향 전환"
+      - "데이터 검증 부족"
+      - "커뮤니케이션 단절"
+  
+  metric_evolution:
+    review_cycle: "분기별"
+    update_criteria:
+      - "시장 환경 변화"
+      - "도구/기술 발전"
+      - "팀 역량 향상"
+      - "고객 요구 변화"
+    
+    calibration_process:
+      - "벤치마크 업데이트"
+      - "가중치 조정"
+      - "새 지표 추가"
+      - "구식 지표 제거"

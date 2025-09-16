@@ -1,0 +1,4 @@
+# Data Integrity (localized)
+
+protection_strategy: ./protection_strategy.yaml
+checkpoint_system: ./checkpoint_system.yaml

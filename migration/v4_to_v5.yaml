@@ -1,0 +1,178 @@
+# Migration Guide: v4.0 to v5.0
+# UMIS v4.0에서 v5.0으로 마이그레이션 가이드
+
+metadata:
+  version_introduced: "5.0"
+  version_modified: "5.0"
+  dependencies: []
+  tags: ["migration", "upgrade", "v5", "guide"]
+  description: "v4.0 고정형에서 v5.0 적응형으로 전환 가이드"
+
+migration_overview:
+  summary: "UMIS v5.0은 기존 v4.0의 모든 기능을 포함하면서 적응형 지능을 추가합니다"
+  backwards_compatible: true
+  migration_complexity: "Low to Medium"
+  
+  major_changes:
+    - "낮은 명확도(20-30%)로 시작 가능"
+    - "Discovery Sprint 도입"
+    - "Stewart의 Progress Guardian 역할"
+    - "자동 데이터 보호 시스템"
+    - "실시간 피벗 지원"
+
+migration_steps:
+  step_1_assessment:
+    description: "현재 v4.0 사용 현황 평가"
+    checklist:
+      - "현재 워크플로우 문서화"
+      - "커스터마이징 내역 확인"
+      - "통합 시스템 목록"
+      - "팀 교육 수준 평가"
+  
+  step_2_preparation:
+    description: "v5.0 전환 준비"
+    actions:
+      technical:
+        - "v5.0 파일 다운로드"
+        - "테스트 환경 구성"
+        - "백업 생성"
+      
+      organizational:
+        - "팀 교육 계획 수립"
+        - "파일럿 프로젝트 선정"
+        - "변경 관리 계획"
+  
+  step_3_installation:
+    description: "v5.0 설치 및 설정"
+    options:
+      parallel_run:
+        description: "v4.0과 v5.0 병행 운영"
+        when: "리스크 최소화 필요"
+        duration: "1-2개월"
+      
+      direct_upgrade:
+        description: "직접 업그레이드"
+        when: "빠른 전환 필요"
+        prerequisites: "충분한 테스트"
+  
+  step_4_configuration:
+    description: "v5.0 설정 조정"
+    key_settings:
+      stewart_guardian:
+        - "모니터링 빈도 설정"
+        - "개입 임계값 조정"
+        - "알림 채널 구성"
+      
+      discovery_sprint:
+        - "기본 기간 설정"
+        - "병렬 처리 옵션"
+        - "수렴 기준 정의"
+      
+      data_protection:
+        - "체크포인트 주기"
+        - "백업 보관 기간"
+        - "복구 절차 테스트"
+
+  step_5_mode_activation:
+    description: "실행 모드 활성화 (Adaptive/Classic)"
+    settings:
+      env_var: "UMIS_MODE"
+      default: "adaptive"
+      options:
+        - adaptive: "v5 적응형 워크플로우 활성화"
+        - classic: "v4 고정형 워크플로우 활성화"
+    references:
+      - "workflows/workflow_modes.yaml#workflow_modes"
+      - "workflows/adaptive/adaptive_workflow.yaml#adaptive_workflow"
+      - "workflows/classic/workflow_classic_v4.yaml#workflow_classic_v4"
+
+workflow_changes:
+  from_fixed_to_adaptive:
+    v4_workflow:
+      description: "5단계 고정 프로세스"
+      phases:
+        - "Phase 0: Preparation (명확도 80%+)"
+        - "Phase 1: Landscape"
+        - "Phase 2: Opportunities"
+        - "Phase 3: Prioritization"
+        - "Phase 4: Deep Dive"
+        - "Phase 5: Synthesis"
+    
+    v5_workflow:
+      description: "3단계 적응형 프로세스"
+      stages:
+        - "Stage 0: Initiation (명확도 20%+)"
+        - "Stage 1: Discovery Sprint"
+        - "Stage 2: Focused Exploration"
+        - "Stage 3: Convergence & Synthesis"
+      
+      key_differences:
+        - "유연한 단계 전환"
+        - "병렬 처리 강화"
+        - "실시간 조정 가능"
+        - "낮은 진입 장벽"
+
+agent_role_updates:
+  mcurator_stewart:
+    v4_role: "Knowledge Curator"
+    v5_role: "Knowledge Curator & Progress Guardian"
+    new_responsibilities:
+      - "실시간 프로젝트 모니터링"
+      - "자동 개입 및 제안"
+      - "데이터 무결성 관리"
+      - "적응형 워크플로우 조정"
+  
+  all_agents:
+    new_capabilities:
+      - "Discovery Sprint 참여"
+      - "병렬 처리 강화"
+      - "실시간 피벗 대응"
+      - "낮은 명확도 처리"
+
+training_requirements:
+  for_teams:
+    essential:
+      - "Discovery Sprint 방법론"
+      - "낮은 명확도 관리"
+      - "Stewart 알림 대응"
+      - "피벗 의사결정"
+    
+    recommended:
+      - "적응형 사고방식"
+      - "불확실성 수용"
+      - "빠른 실험 문화"
+      - "데이터 보호 인식"
+  
+  materials:
+    - "v5.0 Quick Start Guide"
+    - "Discovery Sprint Playbook"
+    - "Stewart Guardian Manual"
+    - "Case Study: 취미 시장 분석"
+
+rollback_plan:
+  triggers:
+    - "중대한 호환성 문제"
+    - "팀 적응 실패"
+    - "비즈니스 영향"
+  
+  procedure:
+    1: "v4.0 환경 복원"
+    2: "데이터 마이그레이션"
+    3: "이슈 분석 및 해결"
+    4: "재시도 계획 수립"
+
+success_criteria:
+  short_term:
+    - "첫 Discovery Sprint 성공"
+    - "Stewart 모니터링 정상 작동"
+    - "데이터 무결성 100%"
+  
+  medium_term:
+    - "프로젝트 시간 20% 단축"
+    - "낮은 명확도 프로젝트 수행"
+    - "팀 만족도 향상"
+  
+  long_term:
+    - "40% 효율성 개선"
+    - "인사이트 품질 30% 향상"
+    - "적응형 문화 정착"

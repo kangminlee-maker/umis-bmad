@@ -1,0 +1,58 @@
+# Universal Market Intelligence System Core Definition
+# 모든 버전에서 공통으로 사용되는 핵심 시스템 정의
+
+metadata:
+  version_introduced: "4.0"
+  version_modified: "5.0"
+  dependencies: []
+  tags: ["core", "system"]
+  description: "UMIS 핵심 시스템 정의"
+
+system:
+  name: "Universal Market Intelligence System"
+  base_version: "4.0"
+  current_version: "5.0"
+  purpose: "불확실한 상황에서도 적응하며 진화하는 범용 시장 분석 시스템"
+  description: "낮은 명확도로 시작해 발견을 통해 성장하는 차세대 시장 정보 시스템"
+  
+  universal_market_definition:
+    step_1_purpose_alignment:
+      question: "왜 이 시장을 분석하는가?"
+      universal_purposes:
+        - "시장 진입 타당성 (Entry Feasibility)"
+        - "투자 의사결정 (Investment Decision)"
+        - "경쟁 전략 수립 (Competitive Strategy)"
+        - "규제 정책 개발 (Regulatory Policy)"
+        - "M&A 기회 탐색 (M&A Opportunity)"
+        - "사업 포트폴리오 최적화 (Portfolio Optimization)"
+        - "탐색적 기회 발굴 (Exploratory Discovery)" # v5.0 신규
+    
+    step_2_market_boundary_definition:
+      question: "분석 대상 시장의 경계는 어디까지인가?"
+      boundary_dimensions:
+        - geographic: "지리적 범위"
+          levels: ["글로벌", "대륙", "국가", "지역", "도시"]
+        
+        - product_service: "제품/서비스 범위"
+          levels: ["전체 산업", "카테고리", "세그먼트", "니치"]
+        
+        - value_chain: "가치사슬 범위"
+          levels: ["전체 사슬", "특정 단계", "핵심 활동"]
+        
+        - customer_type: "고객 유형"
+          levels: ["모든 구매자", "특정 산업", "특정 규모", "특정 용도"]
+    
+    step_3_market_dynamics_framework:
+      question: "이 시장은 어떻게 작동하는가?"
+      universal_dynamics:
+        - value_creation: "가치 창출 메커니즘"
+          types: ["제품 혁신", "비용 효율", "네트워크 효과", "규모의 경제", "범위의 경제"]
+          
+        - competitive_forces: "경쟁 역학"
+          elements: ["공급자 교섭력", "구매자 교섭력", "신규진입 위협", "대체재 위협", "경쟁 강도"]
+          
+        - market_evolution: "시장 진화 단계"
+          stages: ["도입기", "성장기", "성숙기", "쇠퇴기", "전환기", "재탄생기"]
+          
+        - regulatory_impact: "규제 영향"
+          levels: ["고규제", "중규제", "저규제", "규제완화중", "규제강화중"]

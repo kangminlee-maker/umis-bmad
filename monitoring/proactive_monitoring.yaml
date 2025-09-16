@@ -1,0 +1,73 @@
+# Proactive Goal Alignment Monitoring System
+# Stewart가 자율적으로 프로젝트 방향을 모니터링하고 개입
+
+metadata:
+  version_introduced: "5.0"
+  version_modified: "5.0"
+  dependencies: 
+    - "agents/MCurator_Stewart.yaml"
+    - "workflows/adaptive/adaptive_workflow.yaml"
+  tags: ["monitoring", "v5-new", "autonomous", "intervention"]
+  description: "능동적 목표 정렬 모니터링 시스템"
+
+proactive_monitoring:
+  name: "Proactive Goal Alignment Monitoring System"
+  description: "Stewart가 자율적으로 프로젝트 방향을 모니터링하고 개입"
+  owner: "MCurator (Stewart)"
+  anchor: "proactive_monitoring"
+  
+  monitoring_protocol:
+    continuous_tracking:
+      - metric: "시간 배분"
+        description: "각 주제/영역에 소요되는 시간"
+        threshold: "특정 영역 30% 초과 시 경고"
+      
+      - metric: "진척도 vs 계획"
+        description: "예상 대비 실제 진행 상황"
+        threshold: "50% 이상 지연 시 개입"
+      
+      - metric: "발견의 가치"
+        description: "새로운 발견의 영향도"
+        threshold: "High-impact 발견 시 즉시 보고"
+      
+      - metric: "목표 일관성"
+        description: "현재 작업과 목표의 정렬도"
+        threshold: "정렬도 60% 미만 시 재검토 제안"
+  
+  proactive_suggestions:
+    timing: "주요 마일스톤 또는 이상 신호 감지 시"
+    
+    suggestion_types:
+      - type: "Resource Reallocation"
+        when: "특정 영역이 예상보다 복잡하거나 단순할 때"
+        example: "Bill의 계산이 빨리 끝났으니 Steve의 기회 탐색 지원"
+      
+      - type: "Parallel Exploration"
+        when: "불확실성이 높을 때"
+        example: "A안과 B안을 동시에 탐색 후 비교"
+      
+      - type: "Quick Win Focus"
+        when: "시간/예산 제약이 클 때"
+        example: "전체 분석보다 핵심 3개 세그먼트만 집중"
+      
+      - type: "Scope Expansion"
+        when: "예상보다 기회가 클 때"
+        example: "국내뿐 아니라 동남아시아도 포함 검토"
+  
+  communication_protocol:
+    format: "구조화된 인사이트 카드"
+    frequency: "실시간 (트리거 발생 시)"
+    channel: "전용 모니터링 대시보드"
+    
+    priority_levels:
+      - level: "🔴 Critical"
+        description: "즉각적인 의사결정 필요"
+        examples: ["중대한 리스크 발견", "프로젝트 중단 검토"]
+      
+      - level: "🟡 Important"
+        description: "24시간 내 검토 필요"
+        examples: ["방향 조정 제안", "리소스 재배분"]
+      
+      - level: "🟢 Informative"
+        description: "참고용 인사이트"
+        examples: ["진행 현황 업데이트", "마이너 개선 제안"]

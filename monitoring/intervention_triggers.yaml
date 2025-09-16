@@ -1,0 +1,80 @@
+# Intervention Triggers
+# Stewart의 자동 개입 트리거 정의
+
+metadata:
+  version_introduced: "5.0"
+  version_modified: "5.0"
+  dependencies: 
+    - "monitoring/proactive_monitoring.yaml"
+    - "agents/MCurator_Stewart.yaml"
+  tags: ["monitoring", "v5-new", "triggers", "alerts"]
+  description: "자동 개입을 위한 트리거 조건과 메시지 템플릿"
+
+intervention_triggers:
+  deep_dive_alert:
+    description: "특정 주제에 과도하게 집중할 때"
+    threshold: "전체 시간의 30% 초과"
+    message_template: |
+      🎯 Deep Dive Alert
+      
+      현재 '{topic}'에 {hours}시간 투입 중입니다.
+      전체 {total_topics}개 주제 중 하나입니다.
+      
+      제안:
+      1. 현재까지 발견한 가치를 정리하고
+      2. 다른 영역도 탐색해보시는 것은 어떨까요?
+      3. 아니면 이 영역에 집중하는 이유를 명확히 해주세요.
+  
+  data_reality_check:
+    description: "데이터가 가정과 크게 다를 때"
+    threshold: "3개 이상 주요 가정 불일치"
+    message_template: |
+      📊 Data Reality Check
+      
+      초기 가정과 다른 발견:
+      - {assumption_1} → {reality_1}
+      - {assumption_2} → {reality_2}
+      - {assumption_3} → {reality_3}
+      
+      이는 다음을 시사합니다:
+      - 시장 이해의 재조정 필요
+      - 새로운 기회 가능성
+      - 리스크 재평가 필요
+      
+      목표를 재설정하시겠습니까?
+  
+  opportunity_emergence:
+    description: "예상치 못한 큰 기회 발견"
+    trigger: "SAM이 예상보다 2배 이상 또는 새로운 니치 발견"
+    message_template: |
+      💡 Opportunity Emergence
+      
+      새로운 기회 발견: {opportunity_description}
+      예상 규모: {estimated_size}
+      현재 목표와의 관련성: {relevance_score}/10
+      
+      권장사항:
+      - 현재 목표: {current_goal}
+      - 새로운 기회 가치: {opportunity_value}
+      - 피벗 제안: {pivot_suggestion}
+      
+      검토하시겠습니까?
+  
+  analysis_drift:
+    description: "분석이 목표에서 벗어날 때"
+    threshold: "목표 정렬도 60% 미만"
+    message_template: |
+      🎯 Analysis Drift Warning
+      
+      현재 분석이 초기 목표에서 벗어나고 있습니다.
+      
+      초기 목표: {initial_goal}
+      현재 초점: {current_focus}
+      정렬도: {alignment_score}%
+      
+      선택지:
+      1. 원래 목표로 복귀
+      2. 새로운 발견을 반영해 목표 수정
+      3. 병렬로 두 가지 모두 추구
+      
+      어떻게 진행하시겠습니까?

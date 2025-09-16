@@ -1,0 +1,37 @@
+# Workflow Modes (Adaptive v5 / Classic v4)
+
+metadata:
+  version_introduced: "5.0"
+  version_modified: "5.0"
+  tags: ["workflow", "modes", "compatibility"]
+  description: "프로젝트 상황에 맞춰 v5 Adaptive 또는 v4 Classic 워크플로를 선택"
+
+workflow_modes:
+  description: "프로젝트 상황에 따라 모드 선택"
+  modes:
+    - id: adaptive
+      name: "Adaptive v5"
+      when_to_use:
+        - "명확도 1-6 (불확실성 높음)"
+        - "빠른 Discovery/Pivot 필요"
+      entrypoint: "workflows/adaptive/adaptive_workflow.yaml#adaptive_workflow"
+      activation: "export UMIS_MODE='adaptive'"
+      see_also: ["monitoring/proactive_monitoring.yaml#proactive_monitoring"]
+    - id: classic
+      name: "Classic v4"
+      when_to_use:
+        - "명확도 7-9 (요건 명확)"
+        - "전통적 게이트 기반 운영 선호"
+      entrypoint: "workflows/classic/workflow_classic_v4.yaml#workflow_classic_v4"
+      activation: "export UMIS_MODE='classic'"
+      see_also: ["quality/classic_quality_gates.yaml#quality_gates_classic"]
+
+compatibility:
+  backward_compatible: true
+  v4_mode_available: true
+  switching: "프로젝트별 선택 가능"
+  activation:
+    default: "adaptive"
+    env_var: "UMIS_MODE"
+
+

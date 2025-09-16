@@ -1,0 +1,134 @@
+# MECE-based Market Analysis Workflow (v4 Classic)
+
+metadata:
+  version_introduced: "4.0"
+  version_modified: "5.0"
+  tags: ["workflow", "classic", "v4-compatible"]
+  description: "상호배타적이고 전체를 포괄하는 시장 분석 프로세스"
+
+workflow_classic_v4:
+  name: "MECE-based Market Analysis Workflow"
+  description: "상호배타적이고 전체를 포괄하는 시장 분석 프로세스"
+  anchor: "workflow_classic_v4"
+  
+  overview:
+    total_duration: "7-10 business days"
+    parallel_execution: "가능한 모든 독립 작업은 병렬 수행"
+    quality_gates: "각 Phase 종료 시 품질 검증"
+    flexibility: "시장 특성과 목적에 따라 깊이 조정"
+  
+  phase_0_project_initiation:
+    duration: "0.5 day"
+    owner: "Owner"
+    participants: ["all_agents"]
+    activities:
+      - activity: "프로젝트 킥오프"
+        outputs: ["프로젝트 차터", "성공 기준", "분석 범위", "타임라인"]
+      - activity: "Stewart 준비"
+        parallel: true
+        outputs: ["방법론 템플릿 배포", "프로젝트 폴더 생성", "품질 체크리스트 제공"]
+    deliverables: [".project_metadata.yaml", "README.md", "에이전트별 작업 계획"]
+    exit_criteria: ["목적/범위 이해", "리소스 확보", "타임라인 합의"]
+  
+  phase_1_market_structure_analysis:
+    duration: "2-3 days"
+    owner: "Albert"
+    parallel_agents: ["Rachel"]
+    albert_activities:
+      - activity: "가치사슬 매핑"
+        outputs: ["value_chain_map.yaml"]
+      - activity: "거래 패턴 분석"
+        outputs: ["transaction_patterns.yaml"]
+      - activity: "시장 참여자 분류"
+        outputs: ["market_players.json"]
+    rachel_parallel_activities:
+      - activity: "데이터 소스 탐색"
+        outputs: ["available_data_sources.yaml"]
+      - activity: "데이터 정의 수집"
+        outputs: ["data_definitions/"]
+      - activity: "신뢰도 평가"
+        outputs: ["source_reliability.yaml"]
+    collaboration_points:
+      - trigger: "Albert가 데이터 필요"
+        action: "Rachel이 검증된 데이터 제공"
+      - trigger: "Rachel이 정의 불명확"
+        action: "Albert가 시장 맥락 설명"
+    deliverables: ["시장 구조 종합 보고서", "검증된 데이터 세트", "01_raw_data/market_structure/"]
+    quality_gate_1:
+      checks: ["가치사슬 완전성", "데이터 정의 명확성", "시장 경계 합의"]
+      owner: "Stewart"
+  
+  phase_2_opportunity_exploration:
+    duration: "2-3 days"
+    owner: "Steve"
+    dependencies: ["phase_1_outputs"]
+    activities:
+      - activity: "패턴 해석"
+        inputs: ["Albert의 구조 분석"]
+        outputs: ["pattern_interpretations.yaml"]
+      - activity: "기회 발굴"
+        method: "구조적 갭 분석"
+        outputs: ["opportunities_identified.yaml"]
+      - activity: "현실성 검증"
+        collaboration: ["Albert"]
+        outputs: ["validation_results.yaml"]
+      - activity: "시장 재정의"
+        outputs: ["market_redefinitions.yaml"]
+    validation_loop: ["가설", "구조 검증", "데이터 확인", "정제"]
+    deliverables: ["기회 포트폴리오", "검증된 시장 재정의", "01_raw_data/opportunity_analysis/"]
+    quality_gate_2:
+      checks: ["기회의 현실성", "구조적 뒷받침", "실행 가능성"]
+      owner: "Owner"
+  
+  phase_3_market_quantification:
+    duration: "1-2 days"
+    owner: "Bill"
+    dependencies: ["phase_1_outputs", "phase_2_outputs"]
+    critical_collaboration: ["Rachel"]
+    activities:
+      - activity: "SAM 범위 확정"
+        inputs: ["Steve의 시장 재정의"]
+        collaboration: ["Steve", "Owner"]
+      - activity: "4-method SAM 계산"
+        parallel_execution: true
+        methods:
+          - method_1: "Top-down"
+          - method_2: "Bottom-up"
+          - method_3: "Proxy"
+          - method_4: "Competitor"
+      - activity: "수렴도 분석"
+        target: "±30% 이내"
+      - activity: "성장률 분석"
+        outputs: ["growth_projections.yaml"]
+    deliverables: ["SAM 규모", "성장률 전망", "계산 근거", "01_raw_data/market_sizing/"]
+    quality_gate_3:
+      checks: ["4방법 수렴도", "데이터 정의 일관성", "논리적 타당성"]
+      owner: "Rachel + Stewart"
+  
+  phase_4_synthesis_decision:
+    duration: "1 day"
+    owner: "Owner"
+    participants: ["all_agents"]
+    activities:
+      - activity: "종합 리뷰"
+      - activity: "전략적 평가"
+      - activity: "의사결정"
+    deliverables: ["최종 의사결정 문서", "실행 계획", "모니터링 지표", "03_outputs/"]
+    quality_gate_4:
+      checks: ["분석 완전성", "의사결정 충분성", "실행 가능성"]
+      owner: "Owner"
+  
+  phase_5_knowledge_preservation:
+    duration: "0.5 day"
+    owner: "Stewart"
+    parallel: true
+    activities:
+      - activity: "교훈 추출"
+        outputs: ["lessons_learned.yaml"]
+      - activity: "방법론 개선"
+        outputs: ["methodology_updates.yaml"]
+      - activity: "재사용 자산화"
+        outputs: ["템플릿", "체크리스트", "케이스 스터디"]
+    deliverables: ["04_knowledge_extracted/", "Global knowledge base", "프로젝트 아카이빙"]
+
+

@@ -1,0 +1,6 @@
+# Collaboration Triggers (localized)
+
+references:
+  triggers: ../collaboration/triggers.yaml
+  mandatory_collab: ../collaboration/mandatory_collab.yaml
+  information_flow_rules: ../collaboration/information_flow_rules.yaml

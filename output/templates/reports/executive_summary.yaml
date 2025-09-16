@@ -1,0 +1,30 @@
+# Executive Summary Template
+
+metadata:
+  version_introduced: "4.0"
+  version_modified: "5.0"
+  tags: ["template", "report", "executive-summary"]
+
+template:
+  sections:
+    - name: "Key Findings"
+      contents:
+        - "3-5 핵심 인사이트"
+        - "주요 숫자와 그래프"
+        - "전략적 함의"
+    - name: "Market Opportunity"
+      contents:
+        - "SAM 규모와 성장률"
+        - "주요 기회 영역"
+        - "진입 타이밍"
+    - name: "Recommendations"
+      contents:
+        - "Go/No-Go 결정"
+        - "전략적 옵션"
+        - "다음 단계"
+    - name: "Risk & Mitigation"
+      contents:
+        - "주요 리스크"
+        - "완화 전략"
+        - "대안 시나리오"
+

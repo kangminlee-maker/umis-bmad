@@ -1,0 +1,166 @@
+# Adaptive Market Analysis Workflow v5.0
+# 발견과 함께 진화하는 유연한 분석 프로세스
+
+metadata:
+  version_introduced: "5.0"
+  version_modified: "5.0"
+  dependencies: 
+    - "workflows/adaptive/adaptive_workflow.yaml"
+    - "monitoring/proactive_monitoring.yaml"
+  tags: ["workflow", "v5-new", "adaptive", "flexible"]
+  description: "발견과 함께 진화하는 유연한 분석 프로세스"
+
+adaptive_workflow:
+  name: "Adaptive Market Analysis Workflow v5.0"
+  description: "발견과 함께 진화하는 유연한 분석 프로세스"
+  anchor: "adaptive_workflow"
+  
+  core_principles:
+    - "Fixed phases가 아닌 Fluid stages"
+    - "명확도에 따라 깊이 조정"
+    - "발견에 따른 즉각적 피벗"
+    - "병렬 탐색과 빠른 수렴"
+  
+  overview:
+    total_duration: "3-10 days (명확도와 복잡도에 따라)"
+    execution_mode: "Adaptive parallel execution"
+    quality_assurance: "Continuous validation"
+    flexibility: "Stage 건너뛰기, 되돌아가기, 병합 가능"
+  
+  stage_0_initiation:
+    duration: "2-4 hours"
+    owner: "Owner + Stewart"
+    clarity_requirement: "20% 이상"
+    
+    activities:
+      - activity: "Clarity Assessment"
+        output: "초기 명확도 점수 (1-10)"
+        
+      - activity: "Rough Scoping"
+        questions:
+          - "대략 어떤 영역인가?"
+          - "왜 관심이 있는가?"
+          - "성공은 어떤 모습인가?"
+        
+      - activity: "Stewart Activation"
+        actions:
+          - "Guardian Mode 활성화"
+          - "프로젝트 폴더 자동 생성"
+          - "초기 체크포인트 생성"
+    
+    deliverables:
+      - "초기 프로젝트 브리프 (1페이지)"
+      - "Discovery Sprint 계획"
+      - ".project_metadata.yaml (초기 버전)"
+    
+    exit_criteria:
+      - "최소한의 방향성 합의"
+      - "Discovery Sprint 준비 완료"
+  
+  stage_1_discovery_sprint:
+    duration: "1-2 days"
+    owner: "All agents (parallel)"
+    mode: "Exploratory"
+  
+  stage_2_focused_exploration:
+    duration: "2-4 days"
+    owner: "Varies by chosen direction"
+    mode: "Targeted deep-dive"
+    
+    entry_options:
+      option_a_single_focus:
+        when: "하나의 명확한 방향 선택"
+        approach: "전통적 구조화 분석"
+        
+      option_b_parallel_paths:
+        when: "2-3개 유망 방향"
+        approach: "병렬 탐색 후 비교"
+        
+      option_c_iterative_narrowing:
+        when: "여전히 불확실"
+        approach: "단계적 좁혀가기"
+    
+    adaptive_activities:
+      if_clarity_high:  # 7-9
+        - "Albert: 상세 구조 분석"
+        - "Bill: 정밀 SAM 계산"
+        - "Steve: 구체적 기회 검증"
+        - "Rachel: 깊이 있는 데이터 검증"
+      
+      if_clarity_medium:  # 4-6
+        - "Steve: 기회 구체화 작업"
+        - "Albert: 관련 구조 확장 탐색"
+        - "Bill: 범위별 규모 추정"
+        - "Rachel: 핵심 데이터 확보"
+      
+      if_clarity_low:  # 1-3
+        - "추가 Discovery Sprint"
+        - "외부 전문가 인터뷰"
+        - "유사 사례 벤치마킹"
+        - "가설 기반 실험"
+  
+  stage_3_convergence_synthesis:
+    duration: "1-2 days"
+    owner: "Owner + All agents"
+    mode: "Integration and decision"
+    
+    synthesis_activities:
+      quantitative_summary:
+        owner: "Bill"
+        outputs:
+          - "최종 시장 규모"
+          - "신뢰 구간"
+          - "성장 전망"
+          - "민감도 분석"
+      
+      strategic_assessment:
+        owner: "Steve"
+        outputs:
+          - "검증된 기회"
+          - "진입 전략 옵션"
+          - "차별화 포인트"
+          - "리스크 요인"
+      
+      decision_framework:
+        multi_criteria_evaluation:
+          - "시장 매력도"
+          - "전략적 적합성"
+          - "실행 가능성"
+          - "리스크 수준"
+          - "투자 대비 수익"
+        
+        final_outputs:
+          - "Go/No-Go/Conditional 결정"
+          - "투자 규모와 단계"
+          - "실행 로드맵"
+          - "성공 지표"
+          - "모니터링 계획"
+  
+  stage_4_knowledge_preservation:
+    duration: "Continuous + 0.5 day final"
+    owner: "Stewart"
+    mode: "Parallel with other stages"
+    
+    continuous_capture:
+      - "실시간 인사이트 기록"
+      - "의사결정 포인트 문서화"
+      - "방법론 개선사항 메모"
+      - "재사용 가능 요소 표시"
+    
+    automated_features:
+      - "프로젝트 폴더 자동 정리"
+      - "메타데이터 자동 생성"
+      - "체크포인트 아카이빙"
+      - "글로벌 knowledge base 업데이트"
+
+workflow_adaptation_examples:
+  example_1_high_clarity_start:
+    initial_clarity: 8
+    path: "Skip Discovery Sprint → Direct to Focused Analysis"
+    duration: "4-5 days total"
+    
+  example_2_pivot_midway:
+    initial_clarity: 5
+    discovery: "완전히 다른 기회 발견"
+    path: "Sprint → Pivot → New Sprint → Focused Analysis"
+    duration: "6-7 days total"

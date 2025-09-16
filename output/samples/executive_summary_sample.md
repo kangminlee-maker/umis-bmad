@@ -1,0 +1,13 @@
+# Executive Summary (Sample)
+
+## Key Findings
+- ...
+
+## Market Opportunity
+- SAM: ...
+
+## Recommendations
+- Go/No-Go: ...
+
+## Risk & Mitigation
+- ...

@@ -1,0 +1,19 @@
+# Compatibility Matrix
+
+umis_core:
+  version: ">=5.0.0"
+  modes:
+    adaptive: true
+    classic: true
+
+umis_bmad:
+  standalone: true
+  depends_on_local:
+    - "workflows/*"
+    - "agents/*"
+    - "monitoring/*"
+    - "data_integrity/*"
+    - "output/*"
+    - "quality/*"
+    - "migration/*"
+  external_dependencies: []

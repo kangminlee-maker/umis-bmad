@@ -1,0 +1,182 @@
+# Output Formats
+# 표준 출력 형식과 템플릿 정의
+
+metadata:
+  version_introduced: "4.0"
+  version_modified: "5.0"
+  dependencies: ["quality/quality_gates.yaml"]
+  tags: ["output", "formats", "templates", "reporting"]
+  description: "표준 출력 형식과 보고서 템플릿"
+
+output_formats:
+  report_types:
+    executive_summary:
+      description: "경영진 보고용 요약"
+      specifications:
+        length: "2-3 pages"
+        format: "PDF/PPT"
+        language: "Non-technical"
+      
+      required_sections:
+        - section: "Key Findings"
+          content:
+            - "3-5 핵심 인사이트"
+            - "주요 숫자와 그래프"
+            - "전략적 함의"
+        
+        - section: "Market Opportunity"
+          content:
+            - "SAM 규모와 성장률"
+            - "주요 기회 영역"
+            - "진입 타이밍"
+        
+        - section: "Recommendations"
+          content:
+            - "Go/No-Go 결정"
+            - "전략적 옵션"
+            - "다음 단계"
+        
+        - section: "Risk & Mitigation"
+          content:
+            - "주요 리스크"
+            - "완화 전략"
+            - "대안 시나리오"
+    
+    full_report:
+      description: "상세 분석 보고서"
+      specifications:
+        length: "30-50 pages"
+        format: "PDF/Word"
+        structure: "Modular sections"
+      
+      standard_structure:
+        1_executive_summary: "2-3 pages"
+        2_methodology: "3-5 pages"
+        3_market_analysis: "10-15 pages"
+        4_opportunity_assessment: "5-8 pages"
+        5_financial_analysis: "5-8 pages"
+        6_strategic_recommendations: "3-5 pages"
+        7_appendices: "As needed"
+    
+    technical_appendix:
+      description: "기술적 세부사항"
+      contents:
+        - "데이터 소스 목록"
+        - "계산 방법론"
+        - "가정과 제약사항"
+        - "민감도 분석"
+        - "검증 프로세스"
+
+  visualization_standards:
+    chart_types:
+      market_structure:
+        preferred: ["Sankey Diagram", "Network Graph"]
+        purpose: "가치 흐름과 관계 표현"
+        
+      market_size:
+        preferred: ["Waterfall Chart", "Stacked Bar"]
+        purpose: "세그먼트 구성 표현"
+        
+      growth_trends:
+        preferred: ["Line Chart", "Area Chart"]
+        purpose: "시계열 변화 표현"
+        
+      competitive_landscape:
+        preferred: ["Bubble Chart", "Positioning Map"]
+        purpose: "경쟁 위치 표현"
+    
+    design_principles:
+      - "일관된 색상 테마"
+      - "명확한 레이블과 범례"
+      - "적절한 스케일 사용"
+      - "인사이트 강조"
+      - "접근성 고려"
+
+  dashboard_formats:
+    real_time_monitoring:
+      description: "실시간 프로젝트 모니터링 (v5.0)"
+      components:
+        - widget: "Clarity Score Tracker"
+          type: "Gauge Chart"
+          update: "Real-time"
+          
+        - widget: "Time Allocation"
+          type: "Pie Chart"
+          update: "Hourly"
+          
+        - widget: "Discovery Progress"
+          type: "Progress Bar"
+          update: "Real-time"
+          
+        - widget: "Data Health"
+          type: "Status Indicators"
+          update: "Every 2 hours"
+    
+    final_dashboard:
+      description: "최종 결과 대시보드"
+      layouts:
+        - "Overview Page"
+        - "Market Analysis"
+        - "Opportunity Deep Dive"
+        - "Financial Projections"
+        - "Strategic Options"
+
+  delivery_formats:
+    digital_package:
+      structure:
+        - "📁 Executive_Summary/"
+        - "📁 Full_Report/"
+        - "📁 Dashboards/"
+        - "📁 Raw_Data/"
+        - "📁 Presentations/"
+      
+      file_formats:
+        documents: ["PDF", "DOCX", "PPTX"]
+        data: ["XLSX", "CSV", "JSON"]
+        visuals: ["PNG", "SVG", "Interactive HTML"]
+    
+    presentation_deck:
+      standard_flow:
+        - "Title & Agenda"
+        - "Executive Summary"
+        - "Market Overview"
+        - "Key Opportunities"
+        - "Financial Analysis"
+        - "Strategic Recommendations"
+        - "Implementation Roadmap"
+        - "Q&A"
+
+  adaptive_output_format:
+    description: "v5 상황별 결과물 형식"
+    clarity_based_outputs:
+      high_clarity_7_plus:
+        - "전통적 구조화 보고서"
+        - "상세 정량 분석"
+        - "명확한 권고사항"
+      medium_clarity_4_6:
+        - "시나리오 기반 분석"
+        - "범위형 추정치"
+        - "조건부 권고"
+      low_clarity_1_3:
+        - "탐색 결과 요약"
+        - "발견된 기회 목록"
+        - "다음 탐색 방향"
+
+  quality_checklist:
+    content_review:
+      - "수치 정확성 검증"
+      - "일관된 메시지"
+      - "논리적 흐름"
+      - "시각적 명확성"
+    
+    technical_review:
+      - "데이터 출처 명시"
+      - "가정 문서화"
+      - "재현 가능성"
+      - "버전 관리"
+    
+    stakeholder_review:
+      - "대상 독자 적합성"
+      - "핵심 질문 답변"
+      - "실행 가능성"
+      - "리스크 명시"

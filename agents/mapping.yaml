@@ -1,0 +1,9 @@
+# Agent Mapping (localized)
+
+mappings:
+  MAnalyst: ./MAnalyst_Albert.yaml
+  MExplorer: ./MExplorer_Steve.yaml
+  MQuant: ./MQuant_Bill.yaml
+  MValidator: ./MValidator_Rachel.yaml
+  MCurator: ./MCurator_Stewart.yaml
+  MOwner: ./MOwner.yaml

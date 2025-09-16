@@ -1,0 +1,18 @@
+# Intervention Alert Template (v5)
+
+metadata:
+  version_introduced: "5.0"
+  version_modified: "5.0"
+  tags: ["template", "alert", "monitoring"]
+
+template:
+  title: "🎯 [Priority Level] Intervention Alert"
+  fields:
+    - "상황: {situation_description}"
+    - "영향: {impact_assessment}"
+    - "권장 조치: 1) {action_1}, 2) {action_2}, 3) {action_3}"
+    - "예상 결과: {expected_outcome}"
+    - "대안: {alternative_approach}"
+    - "응답 필요: {yes/no}"
+    - "응답 기한: {deadline}"
+
