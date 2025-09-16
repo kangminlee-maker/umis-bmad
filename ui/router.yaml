@@ -11,7 +11,7 @@ routes:
     to: "MExplorer_Steve"
   - match: "목표|정렬|진행 관리|메타"
     to: "MCurator_Stewart"
-  - match: "^/(activate( umis)?|활성화)$"
+  - match: "^/(activate|활성화)$"
     to: "MCurator_Stewart"
   - match: "^/(help|도움말|capabilities|명령어)$"
     to: "MCurator_Stewart"

@@ -24,7 +24,7 @@ python3 "$UMIS_HOME/build/make_bundle.py" --mode adaptive --profile cursor_chat
 4) Agents: 선택된 에이전트가 해결안을 제시하고 필요시 협업 요청을 트리거합니다.
 
 ## 활성화(Activate) 루틴
-- 첫 문구 예시: "/활성화" 또는 "/activate umis"
+- 첫 문구 예시: "/활성화" 또는 "/activate"
 - 시스템 응답: `ui/prompts.yaml`의 `activation_ack`로 준비 완료 배너와 다음 단계 안내
 
 ## 전역 도움말(명령/프롬프트/라우팅 목록)

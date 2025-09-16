@@ -12,7 +12,7 @@ export UMIS_HOME="$(pwd)"
 ```
 
 ## Quick activate (chat)
-- Say: "/활성화" or "/activate umis"
+- Say: "/활성화" or "/activate"
 - If no bundle exists, the assistant builds it and replies with readiness + next step.
 
 ## Repo map (key)
