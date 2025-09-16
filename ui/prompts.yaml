@@ -10,6 +10,13 @@ prompts:
   - id: "handoff_summary"
     text: |
       방금까지의 진행 요약과 다음 액션을 공유합니다.
+  - id: "result_with_explainer"
+    text: |
+      결과 요약: {{result_summary}}
+      담당 에이전트: {{agent}}
+      선정 이유: {{rationale}}
+      수행 방식: {{method}}
+      다음 단계: {{next_steps}}
   - id: "activation"
     text: |
       UMIS를 활성화합니다. 컨텍스트를 확인하고 대화 세션을 준비합니다.

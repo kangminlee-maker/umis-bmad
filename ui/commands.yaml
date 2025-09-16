@@ -22,6 +22,8 @@ commands:
     outputs:
       - plan
       - suggested_agents
+      - rationale          # 왜 이 에이전트/경로인지
+      - method             # 어떤 방식/절차로 수행할지
     description: "문제 진술을 분석하고 적합한 에이전트/워크플로로 라우팅"
   - name: "run_quick_sam"
     inputs:
@@ -30,6 +32,9 @@ commands:
       - sam_estimate
       - assumptions
       - confidence
+      - agent
+      - rationale
+      - method
     description: "Bill 중심의 간이 SAM 스텝 실행"
   - name: "build_bundle"
     inputs:
@@ -56,6 +61,9 @@ commands:
       - synonyms
       - related_terms
       - fallback_queries
+      - agent
+      - rationale
+      - method
     description: "Rachel이 초보자/사용자 용어로 키워드 확장 및 실패 대비 우회경로 제시"
   - name: "evidence_search"
     inputs:
@@ -64,6 +72,9 @@ commands:
     outputs:
       - sources
       - credibility_notes
+      - agent
+      - rationale
+      - method
     description: "신뢰도 중심의 근거 소스 탐색과 신뢰성 주석"
 collaboration_triggers:
   - when: "데이터 신뢰도 불충분"

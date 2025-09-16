@@ -31,3 +31,4 @@ python3 "$UMIS_HOME/build/make_bundle.py" --mode adaptive --profile cursor_chat
 - kickoff: 문제를 한 문장으로 정리
 - need_clarification: 부족한 맥락 신속 보완
 - handoff_summary: 다음 액션 합의
+- result_with_explainer: 결과 + (에이전트/이유/방법/다음 단계)까지 표준 보고
