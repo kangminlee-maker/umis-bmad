@@ -24,6 +24,7 @@ commands:
       - suggested_agents
       - rationale          # 왜 이 에이전트/경로인지
       - method             # 어떤 방식/절차로 수행할지
+      - collaboration_plan # 참여 에이전트, 의존관계, 핸드오프 포인트
     description: "문제 진술을 분석하고 적합한 에이전트/워크플로로 라우팅"
   - name: "run_quick_sam"
     inputs:
@@ -35,6 +36,8 @@ commands:
       - agent
       - rationale
       - method
+      - collaborators      # 함께 일한 에이전트 목록(있다면)
+      - handoffs           # 핸드오프 내역(있다면)
     description: "Bill 중심의 간이 SAM 스텝 실행"
   - name: "build_bundle"
     inputs:
@@ -64,6 +67,8 @@ commands:
       - agent
       - rationale
       - method
+      - collaborators
+      - handoffs
     description: "Rachel이 초보자/사용자 용어로 키워드 확장 및 실패 대비 우회경로 제시"
   - name: "evidence_search"
     inputs:
@@ -75,6 +80,17 @@ commands:
       - agent
       - rationale
       - method
+      - collaborators
+      - handoffs
+
+  - name: "orchestrate_collab"
+    inputs:
+      - goal
+      - required_capabilities   # 예: 구조분석, 검증, 정량화
+    outputs:
+      - collaboration_plan      # 참여 에이전트, 순서/병렬, 인터페이스
+      - coordination_rules      # 중간결과물 포맷, 승인 기준, 실패 대응
+    description: "여러 에이전트의 분업/병렬/핸드오프 전략을 설계"
     description: "신뢰도 중심의 근거 소스 탐색과 신뢰성 주석"
 collaboration_triggers:
   - when: "데이터 신뢰도 불충분"

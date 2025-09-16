@@ -17,6 +17,17 @@ prompts:
       선정 이유: {{rationale}}
       수행 방식: {{method}}
       다음 단계: {{next_steps}}
+  - id: "collab_report"
+    text: |
+      협업 계획: {{collaboration_plan}}
+      참여 에이전트: {{collaborators}}
+      핸드오프 내역: {{handoffs}}
+      조정 규칙: {{coordination_rules}}
+  - id: "handoff_notice"
+    text: |
+      핸드오프 알림 → 송신: {{from_agent}} → 수신: {{to_agent}}
+      전달물: {{artifact_summary}}
+      검수 기준: {{acceptance_criteria}}
   - id: "activation"
     text: |
       UMIS를 활성화합니다. 컨텍스트를 확인하고 대화 세션을 준비합니다.

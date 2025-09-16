@@ -32,3 +32,5 @@ python3 "$UMIS_HOME/build/make_bundle.py" --mode adaptive --profile cursor_chat
 - need_clarification: 부족한 맥락 신속 보완
 - handoff_summary: 다음 액션 합의
 - result_with_explainer: 결과 + (에이전트/이유/방법/다음 단계)까지 표준 보고
+- collab_report: 분업/핸드오프 계획과 진행 상황 보고
+- handoff_notice: 중간 산출물 전달 알림
