@@ -26,7 +26,7 @@
 - 반복 WARN: 회사별 화이트리스트로 계정 고정(예: 특정 `account_id` 우선)
 
 ## 구현 참조
-- 수집 스크립트: `/Users/kangmin/Desktop/Chatgpt_취미시장분석/dart/dart_fetch_sales.py`
+- 수집 스크립트: 외부 프로젝트 참조 (예: `dart/dart_fetch_sales.py`)
 - 에이전트 가드레일: `agents/MValidator_Rachel.yaml`, `agents/MCurator_Stewart.yaml`
 - 체크리스트: `quality/checklists/validation_checklist.md`
 

@@ -2,7 +2,8 @@
 
 ## 빠른 시작
 ```bash
-export UMIS_HOME="/Users/kangmin/Desktop/UMIS-Development/UMIS-bmad"
+# 프로젝트 루트 디렉토리에서 실행
+export UMIS_HOME="$(pwd)"
 export UMIS_MODE=adaptive
 python3 "$UMIS_HOME/build/make_bundle.py" --mode adaptive --profile cursor_chat
 ```
